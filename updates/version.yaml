@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Create promotions groups table'
+    - create_table_numencode_widgets_promotions_groups.php
+1.0.3:
+    - 'Create promotions items table'
+    - create_table_numencode_widgets_promotions_items.php

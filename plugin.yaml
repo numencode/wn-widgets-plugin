@@ -1,0 +1,28 @@
+plugin:
+    name: 'numencode.widgets::lang.plugin.name'
+    description: 'numencode.widgets::lang.plugin.description'
+    author: 'Blaz Orazem'
+    icon: oc-icon-briefcase
+    homepage: 'https://github.com/numencode/widgets-plugin'
+navigation:
+    widgets:
+        label: 'numencode.widgets::lang.plugin.name'
+        url: numencode/widgets/promotions
+        icon: icon-briefcase
+        permissions:
+            - manage_widgets
+        order: '400'
+        sideMenu:
+            promotions:
+                label: 'numencode.widgets::lang.promotions.name'
+                url: numencode/widgets/promotions
+                icon: icon-th-large
+                permissions:
+                    - manage_promotions
+permissions:
+    manage_promotions_groups:
+        tab: 'numencode.widgets::lang.plugin.name'
+        label: 'numencode.widgets::lang.permission.promotions_groups'
+    manage_promotions_items:
+        tab: 'numencode.widgets::lang.plugin.name'
+        label: 'numencode.widgets::lang.permission.promotions_items'

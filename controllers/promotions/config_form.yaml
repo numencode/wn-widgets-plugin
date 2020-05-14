@@ -1,0 +1,10 @@
+name: Promotions
+form: $/numencode/widgets/models/promotiongroup/fields.yaml
+modelClass: NumenCode\Widgets\Models\PromotionGroup
+defaultRedirect: numencode/widgets/promotions
+create:
+    redirect: 'numencode/widgets/promotions/update/:id'
+    redirectClose: numencode/widgets/promotions
+update:
+    redirect: numencode/widgets/promotions
+    redirectClose: numencode/widgets/promotions

@@ -1,0 +1,53 @@
+columns:
+    id:
+        label: id
+        type: number
+        invisible: true
+    group_id:
+        label: group_id
+        type: number
+        searchable: true
+        invisible: false
+        sortable: true
+    title:
+        label: title
+        type: text
+        searchable: true
+        sortable: true
+    subtitle:
+        label: subtitle
+        type: text
+        searchable: true
+        sortable: true
+    description:
+        label: description
+        type: text
+        searchable: true
+        sortable: true
+    link:
+        label: link
+        type: text
+        searchable: true
+        sortable: true
+    link_title:
+        label: link_title
+        type: text
+        searchable: true
+        sortable: true
+    picture:
+        label: picture
+        type: text
+        searchable: true
+        sortable: true
+    is_primary:
+        label: is_primary
+        type: text
+        sortable: true
+    sort_order:
+        label: sort_order
+        type: number
+        sortable: true
+    created_at:
+        label: created_at
+        type: datetime
+        sortable: true
