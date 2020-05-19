@@ -1,15 +1,15 @@
 <?php
 
 return [
-    'plugin'     => [
+    'plugin'      => [
         'name'        => 'Widgets',
         'description' => 'Widgets plugin for October CMS'
     ],
-    'permission' => [
+    'permissions' => [
         'promotions_groups' => 'Manage promotion groups',
         'promotions_items'  => 'Manage promotion items',
     ],
-    'promotions' => [
+    'promotions'  => [
         'name' => 'Promotions',
     ],
 ];

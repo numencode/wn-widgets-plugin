@@ -1,0 +1,11 @@
+items:
+    label: 'Items here'
+    manage:
+        form: $/numencode/widgets/models/promotionitem/relation_fields.yaml
+        list: $/numencode/widgets/models/promotionitem/relation_columns.yaml
+    view:
+        list: $/numencode/widgets/models/promotionitem/relation_columns.yaml
+        toolbarButtons: create|delete
+        defaultSort:
+            column: sort_order
+            direction: asc

@@ -18,6 +18,7 @@ class CreateTableNumencodeWidgetsPromotionsItems extends Migration
             $table->string('link_title')->nullable();
             $table->string('picture')->nullable();
             $table->boolean('is_primary');
+            $table->boolean('is_published');
             $table->integer('sort_order');
             $table->timestamps();
 

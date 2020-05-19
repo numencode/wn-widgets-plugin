@@ -1,20 +1,21 @@
 columns:
-    id:
-        label: id
-        type: number
-        invisible: true
     title:
-        label: title
+        label: 'numencode.fundamentals::lang.field.title'
         type: text
         searchable: true
         sortable: true
-    is_visible:
-        label: is_visible
-        type: text
+    item_count:
+        label: 'numencode.fundamentals::lang.item.count'
+        type: number
+        searchable: false
+        sortable: true
+    is_published:
+        label: 'numencode.fundamentals::lang.field.is_published'
+        type: switch
         searchable: true
         sortable: true
     created_at:
-        label: created_at
+        label: 'numencode.fundamentals::lang.timestamp.created_at'
         type: datetime
         searchable: true
         sortable: true
