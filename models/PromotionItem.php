@@ -35,11 +35,7 @@ class PromotionItem extends Model
         'is_published' => 'boolean',
     ];
 
-    public $relationable = [
-        'items_list' => 'items',
-    ];
-
     public $belongsTo = [
-        'group' => [PromotionGroup::class, 'key' => 'group_id']
+        'group' => [PromotionGroup::class, 'key' => 'group_id'],
     ];
 }

@@ -1,12 +1,16 @@
 <?php namespace NumenCode\Widgets;
 
 use System\Classes\PluginBase;
-use NumenCode\Widgets\Controllers\Promotions;
+use NumenCode\Widgets\Components\Promotions;
 use NumenCode\Fundamentals\Classes\CmsPermissions;
+use NumenCode\Widgets\Controllers\Promotions as PromotionsController;
 
 class Plugin extends PluginBase
 {
-    public $require = ['NumenCode.Fundamentals'];
+    public $require = [
+        'NumenCode.Fundamentals',
+        'RainLab.Translate',
+    ];
 
     public function pluginDetails()
     {
@@ -21,14 +25,25 @@ class Plugin extends PluginBase
 
     public function boot()
     {
-        CmsPermissions::revokeDelete(['owners', 'publishers'], Promotions::class);
+        CmsPermissions::revokeDelete(['owners', 'publishers'], PromotionsController::class);
     }
 
     public function registerComponents()
     {
+        return [
+            Promotions::class => 'promotions',
+        ];
+    }
+
+    public function registerPermissions()
+    {
+        return [
+            'numencode.widgets.manage_promotions' => 'numencode.widgets::lang.permissions.promotions',
+        ];
     }
 
     public function registerSettings()
     {
+        //
     }
 }

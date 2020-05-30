@@ -38,7 +38,7 @@ class PromotionGroup extends Model
     ];
 
     public $hasMany = [
-        'items' => [PromotionItem::class, 'key' => 'group_id', 'delete' => true]
+        'items' => [PromotionItem::class, 'key' => 'group_id', 'delete' => true],
     ];
 
     public function getItemCountAttribute()

@@ -11,7 +11,7 @@ tabs:
             span: full
             type: repeater
             cssClass: 'repeater-collapsible repeater-open'
-            form: $/numencode/widgets/models/promotionitem/fields_repeater.yaml
+            form: $/numencode/widgets/models/promotionitem/fields.yaml
 secondaryTabs:
     fields:
         is_published:

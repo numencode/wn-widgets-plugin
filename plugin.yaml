@@ -20,9 +20,6 @@ navigation:
                 permissions:
                     - manage_promotions
 permissions:
-    manage_promotions_groups:
+    manage_promotions:
         tab: 'numencode.widgets::lang.plugin.name'
-        label: 'numencode.widgets::lang.permissions.promotions_groups'
-    manage_promotions_items:
-        tab: 'numencode.widgets::lang.plugin.name'
-        label: 'numencode.widgets::lang.permissions.promotions_items'
+        label: 'numencode.widgets::lang.permissions.promotions'

@@ -4,25 +4,21 @@ use BackendMenu;
 use Backend\Classes\Controller;
 use Backend\Behaviors\FormController;
 use Backend\Behaviors\ListController;
-use Backend\Behaviors\RelationController;
 
 class Promotions extends Controller
 {
     public $implement = [
         ListController::class,
         FormController::class,
-        RelationController::class,
     ];
 
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
-    public $relationConfig = 'config_relation.yaml';
 
     public $bodyClass = 'compact-container';
 
     public $requiredPermissions = [
-        'manage_promotions_groups',
-        'manage_promotions_items',
+        'manage_promotions',
     ];
 
     public function __construct()
