@@ -1,6 +1,7 @@
 <?php namespace NumenCode\Widgets;
 
 use System\Classes\PluginBase;
+use NumenCode\Widgets\Components\Counters;
 use NumenCode\Widgets\Components\Promotions;
 use NumenCode\Fundamentals\Classes\CmsPermissions;
 use NumenCode\Widgets\Controllers\Promotions as PromotionsController;
@@ -31,6 +32,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
+            Counters::class   => 'counters',
             Promotions::class => 'promotions',
         ];
     }
@@ -38,6 +40,7 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
+            'numencode.widgets.manage_counters'   => 'numencode.widgets::lang.permissions.counters',
             'numencode.widgets.manage_promotions' => 'numencode.widgets::lang.permissions.promotions',
         ];
     }

@@ -2,7 +2,6 @@
 
 use Cms\Classes\ComponentBase;
 use NumenCode\Widgets\Models\PromotionGroup;
-use NumenCode\Widgets\Models\PromotionItem;
 
 class Promotions extends ComponentBase
 {
@@ -32,7 +31,7 @@ class Promotions extends ComponentBase
                 'title'       => 'numencode.widgets::lang.promotions.layout_title',
                 'description' => 'numencode.widgets::lang.promotions.layout_description',
                 'type'        => 'dropdown',
-                'default'     => 'bootstrap4',
+                'default'     => 'default',
             ],
         ];
     }
@@ -45,7 +44,7 @@ class Promotions extends ComponentBase
     public function getLayoutOptions()
     {
         return [
-            'bootstrap4' => 'Bootstrap 4',
+            'default'    => 'Bootstrap 4',
             'bootstrap3' => 'Bootstrap 3',
         ];
     }
@@ -58,7 +57,7 @@ class Promotions extends ComponentBase
     public function onRender()
     {
         if (!$layout = $this->property('layout')) {
-            $layout = 'bootstrap4';
+            $layout = 'default';
         }
 
         return $this->renderPartial('@' . $layout . '.htm');
