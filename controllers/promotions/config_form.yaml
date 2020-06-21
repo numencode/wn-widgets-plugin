@@ -1,4 +1,4 @@
-name: Promotions
+name: 'numencode.widgets::lang.promotions.name'
 form: $/numencode/widgets/models/promotiongroup/fields.yaml
 modelClass: NumenCode\Widgets\Models\PromotionGroup
 defaultRedirect: numencode/widgets/promotions

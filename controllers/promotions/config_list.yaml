@@ -1,6 +1,6 @@
 list: $/numencode/widgets/models/promotiongroup/columns.yaml
 modelClass: NumenCode\Widgets\Models\PromotionGroup
-title: Promotions
+title: 'numencode.widgets::lang.promotions.name'
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true

@@ -5,7 +5,7 @@ use Backend\Classes\Controller;
 use Backend\Behaviors\FormController;
 use Backend\Behaviors\ListController;
 
-class Promotions extends Controller
+class Features extends Controller
 {
     public $implement = [
         FormController::class,
@@ -18,12 +18,12 @@ class Promotions extends Controller
     public $bodyClass = 'compact-container';
 
     public $requiredPermissions = [
-        'manage_promotions',
+        'manage_features',
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('NumenCode.Widgets', 'widgets', 'promotions');
+        BackendMenu::setContext('NumenCode.Widgets', 'widgets', 'features');
     }
 }

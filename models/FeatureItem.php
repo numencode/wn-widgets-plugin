@@ -5,11 +5,11 @@ use October\Rain\Database\Traits\Sortable;
 use October\Rain\Database\Traits\Validation;
 use NumenCode\Fundamentals\Traits\Publishable;
 
-class PromotionItem extends Model
+class FeatureItem extends Model
 {
     use Publishable, Sortable, Validation;
 
-    public $table = 'numencode_widgets_promotions_items';
+    public $table = 'numencode_widgets_features_items';
 
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
@@ -40,6 +40,6 @@ class PromotionItem extends Model
     ];
 
     public $belongsTo = [
-        'group' => [PromotionGroup::class, 'key' => 'group_id'],
+        'group' => [FeatureGroup::class, 'key' => 'group_id'],
     ];
 }

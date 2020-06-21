@@ -13,3 +13,11 @@ and set an optional CSS class for the icon. Counters are managed via the compone
 Promotions, such as content sliders and carousels, are simple to set up, totally customisable to the look and feel of 
 your website, and allow you to showcase creative content in a relatively small footprint. Promotions are managed on the
 Promotions tab of the Widgets plugin.
+
+## Highlights
+
+TBD.
+
+## Features
+
+TBD.

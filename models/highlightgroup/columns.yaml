@@ -1,0 +1,21 @@
+columns:
+    title:
+        label: 'numencode.fundamentals::lang.field.title'
+        type: text
+        searchable: true
+        sortable: true
+    item_count:
+        label: 'numencode.fundamentals::lang.item.count'
+        type: number
+        searchable: false
+        sortable: true
+    is_published:
+        label: 'numencode.fundamentals::lang.field.is_published'
+        type: switch
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'numencode.fundamentals::lang.timestamp.created_at'
+        type: datetime
+        searchable: true
+        sortable: true

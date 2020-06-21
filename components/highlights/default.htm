@@ -1,22 +1,22 @@
-{% set group = __SELF__.promotion %}
+{% set group = __SELF__.highlight %}
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        {% for promotion in group.items %}
+        {% for highlight in group.items %}
             <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index0 }}" {{ loop.first ? 'class="active"' : '' }}></li>
         {% endfor %}
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-        {% for promotion in group.items %}
+        {% for highlight in group.items %}
             <div class="carousel-item{{ loop.first ? ' active' : '' }}">
-                <img class="d-block w-100" src="{{ promotion.picture|media }}" alt="{{ promotion.title }}">
+                <img class="d-block w-100" src="{{ highlight.picture|media }}" alt="{{ highlight.title }}">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>{{ promotion.title }}</h5>
-                    <p>{{ promotion.subtitle }}</p>
-                    <p>{{ promotion.content }}</p>
+                    <h5>{{ highlight.title }}</h5>
+                    <p>{{ highlight.subtitle }}</p>
+                    <p>{{ highlight.content }}</p>
                 </div>
             </div>
         {% endfor %}

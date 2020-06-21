@@ -3,11 +3,13 @@
 return [
     'plugin'      => [
         'name'        => 'Widgets',
-        'description' => 'Widgets plugin for October CMS.',
+        'description' => 'Numencode Widgets plugin for October CMS.',
     ],
     'permissions' => [
         'counters'   => 'Manage counters',
         'promotions' => 'Manage promotions',
+        'highlights' => 'Manage highlights',
+        'features'   => 'Manage features',
     ],
     'counters'    => [
         'name'           => 'Counters',
@@ -28,5 +30,21 @@ return [
         'layout_description' => 'Change layout for the promotions display',
         'group_title'        => 'Promotion',
         'group_description'  => 'Displayed group of promotions',
+    ],
+    'highlights'  => [
+        'name'               => 'Highlights',
+        'description'        => 'Create and manage various highlights for the website.',
+        'layout_title'       => 'Layout',
+        'layout_description' => 'Change layout for the highlights display',
+        'group_title'        => 'Highlight',
+        'group_description'  => 'Displayed group of highlights',
+    ],
+    'features'  => [
+        'name'               => 'Features',
+        'description'        => 'Create and manage various features for the website.',
+        'layout_title'       => 'Layout',
+        'layout_description' => 'Change layout for the features display',
+        'group_title'        => 'Feature',
+        'group_description'  => 'Displayed group of features',
     ],
 ];
