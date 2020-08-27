@@ -1,34 +1,19 @@
 {% set group = __SELF__.highlight %}
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        {% for highlight in group.items %}
-            <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index0 }}" {{ loop.first ? 'class="active"' : '' }}></li>
-        {% endfor %}
-    </ol>
+<h1 class="my-4">{{ group.title }}</h1>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-        {% for highlight in group.items %}
-            <div class="carousel-item{{ loop.first ? ' active' : '' }}">
-                <img class="d-block w-100" src="{{ highlight.picture|media }}" alt="{{ highlight.title }}">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>{{ highlight.title }}</h5>
-                    <p>{{ highlight.subtitle }}</p>
-                    <p>{{ highlight.content }}</p>
+<div class="row">
+    {% for highlight in group.items %}
+        <div class="col-lg-4 mb-4 highlight-item-{{ loop.index0 }}">
+            <div class="card h-100">
+                <h4 class="card-header">{{ highlight.title }}</h4>
+                <div class="card-body">
+                    <p class="card-text">{{ highlight.content }}</p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-primary" href="{{ highlight.link }}">{{ highlight.link_title }}</a>
                 </div>
             </div>
-        {% endfor %}
-    </div>
-
-    <!-- Controls -->
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
+        </div>
+    {% endfor %}
 </div>

@@ -2,6 +2,8 @@
 
 use System\Classes\PluginBase;
 use NumenCode\Widgets\Components\Counters;
+use NumenCode\Widgets\Components\Features;
+use NumenCode\Widgets\Components\Highlights;
 use NumenCode\Widgets\Components\Promotions;
 use NumenCode\Fundamentals\Classes\CmsPermissions;
 use NumenCode\Widgets\Controllers\Promotions as PromotionsController;
@@ -34,6 +36,18 @@ class Plugin extends PluginBase
         return [
             Counters::class   => 'counters',
             Promotions::class => 'promotions',
+            Highlights::class => 'highlights',
+            Features::class   => 'highlights',
+        ];
+    }
+
+    public function registerPageSnippets()
+    {
+        return [
+            Counters::class   => 'counters',
+            Promotions::class => 'promotions',
+            Highlights::class => 'highlights',
+            Features::class   => 'highlights',
         ];
     }
 

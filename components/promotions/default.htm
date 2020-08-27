@@ -9,14 +9,12 @@
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+    <div class="carousel-inner" role="listbox">
         {% for promotion in group.items %}
-            <div class="carousel-item{{ loop.first ? ' active' : '' }}">
-                <img class="d-block w-100" src="{{ promotion.picture|media }}" alt="{{ promotion.title }}">
+            <div class="carousel-item{{ loop.first ? ' active' : '' }}" style="background-image: url('{{ promotion.picture|media }}')">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>{{ promotion.title }}</h5>
+                    <h3>{{ promotion.title }}</h3>
                     <p>{{ promotion.subtitle }}</p>
-                    <p>{{ promotion.content }}</p>
                 </div>
             </div>
         {% endfor %}

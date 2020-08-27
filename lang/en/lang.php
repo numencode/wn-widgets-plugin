@@ -3,7 +3,7 @@
 return [
     'plugin'      => [
         'name'        => 'Widgets',
-        'description' => 'Numencode Widgets plugin for October CMS.',
+        'description' => 'NumenCode widgets for October CMS.',
     ],
     'permissions' => [
         'counters'   => 'Manage counters',
@@ -39,7 +39,7 @@ return [
         'group_title'        => 'Highlight',
         'group_description'  => 'Displayed group of highlights',
     ],
-    'features'  => [
+    'features'    => [
         'name'               => 'Features',
         'description'        => 'Create and manage various features for the website.',
         'layout_title'       => 'Layout',

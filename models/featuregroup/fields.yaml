@@ -19,4 +19,4 @@ secondaryTabs:
             comment: 'numencode.fundamentals::lang.field.is_published_comment'
             span: full
             type: switch
-            default: 1
+            default: true

@@ -27,6 +27,7 @@ fields:
         type: text
     is_published:
         label: 'numencode.fundamentals::lang.field.is_published'
+        comment: 'numencode.fundamentals::lang.field.is_published_comment'
         span: left
         type: switch
-        comment: 'numencode.fundamentals::lang.field.is_published_comment'
+        default: true

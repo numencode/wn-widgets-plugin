@@ -44,8 +44,7 @@ class Promotions extends ComponentBase
     public function getLayoutOptions()
     {
         return [
-            'default'    => 'Bootstrap 4',
-            'bootstrap3' => 'Bootstrap 3',
+            'default' => 'Bootstrap 4',
         ];
     }
 
