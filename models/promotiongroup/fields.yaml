@@ -12,6 +12,12 @@ tabs:
             type: repeater
             cssClass: 'repeater-collapsible repeater-open'
             form: $/numencode/widgets/models/promotionitem/fields.yaml
+        content:
+            tab: 'numencode.fundamentals::lang.field.description'
+            label: 'numencode.fundamentals::lang.field.content'
+            span: full
+            size: giant
+            type: richeditor
 secondaryTabs:
     fields:
         is_published:

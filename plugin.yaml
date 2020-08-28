@@ -19,25 +19,25 @@ navigation:
                 icon: icon-th-large
                 permissions:
                     - manage_promotions
-            highlights:
-                label: 'numencode.widgets::lang.highlights.name'
-                url: numencode/widgets/highlights
-                icon: icon-star
-                permissions:
-                    - manage_highlights
             features:
                 label: 'numencode.widgets::lang.features.name'
                 url: numencode/widgets/features
                 icon: icon-eye
                 permissions:
                     - manage_features
+            highlights:
+                label: 'numencode.widgets::lang.highlights.name'
+                url: numencode/widgets/highlights
+                icon: icon-star
+                permissions:
+                    - manage_highlights
 permissions:
     manage_promotions:
         tab: 'numencode.widgets::lang.plugin.name'
         label: 'numencode.widgets::lang.permissions.promotions'
-    manage_highlights:
-        tab: 'numencode.widgets::lang.plugin.name'
-        label: 'numencode.widgets::lang.permissions.highlights'
     manage_features:
         tab: 'numencode.widgets::lang.plugin.name'
         label: 'numencode.widgets::lang.permissions.features'
+    manage_highlights:
+        tab: 'numencode.widgets::lang.plugin.name'
+        label: 'numencode.widgets::lang.permissions.highlights'

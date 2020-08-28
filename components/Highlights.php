@@ -45,7 +45,6 @@ class Highlights extends ComponentBase
     {
         return [
             'default' => 'Default',
-            'media'   => 'Default with pictures',
         ];
     }
 

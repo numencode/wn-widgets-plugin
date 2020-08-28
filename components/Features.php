@@ -45,6 +45,7 @@ class Features extends ComponentBase
     {
         return [
             'default' => 'Default',
+            'media'   => 'Default with pictures',
         ];
     }
 

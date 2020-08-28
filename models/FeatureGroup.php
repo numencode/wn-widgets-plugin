@@ -22,6 +22,7 @@ class FeatureGroup extends Model
 
     protected $fillable = [
         'title',
+        'content',
         'is_published',
     ];
 

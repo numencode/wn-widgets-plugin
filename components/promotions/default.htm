@@ -3,18 +3,18 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        {% for promotion in group.items %}
+        {% for item in group.items %}
             <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index0 }}" {{ loop.first ? 'class="active"' : '' }}></li>
         {% endfor %}
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        {% for promotion in group.items %}
-            <div class="carousel-item{{ loop.first ? ' active' : '' }}" style="background-image: url('{{ promotion.picture|media }}')">
+        {% for item in group.items %}
+            <div class="carousel-item{{ loop.first ? ' active' : '' }}" style="background-image: url('{{ item.picture|media }}')">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>{{ promotion.title }}</h3>
-                    <p>{{ promotion.subtitle }}</p>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.subtitle }}</p>
                 </div>
             </div>
         {% endfor %}

@@ -36,8 +36,8 @@ class Plugin extends PluginBase
         return [
             Counters::class   => 'counters',
             Promotions::class => 'promotions',
+            Features::class   => 'features',
             Highlights::class => 'highlights',
-            Features::class   => 'highlights',
         ];
     }
 
@@ -46,8 +46,8 @@ class Plugin extends PluginBase
         return [
             Counters::class   => 'counters',
             Promotions::class => 'promotions',
+            Features::class   => 'features',
             Highlights::class => 'highlights',
-            Features::class   => 'highlights',
         ];
     }
 
@@ -56,6 +56,8 @@ class Plugin extends PluginBase
         return [
             'numencode.widgets.manage_counters'   => 'numencode.widgets::lang.permissions.counters',
             'numencode.widgets.manage_promotions' => 'numencode.widgets::lang.permissions.promotions',
+            'numencode.widgets.manage_features'   => 'numencode.widgets::lang.permissions.features',
+            'numencode.widgets.manage_highlights' => 'numencode.widgets::lang.permissions.highlights',
         ];
     }
 

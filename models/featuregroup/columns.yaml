@@ -4,6 +4,12 @@ columns:
         type: text
         searchable: true
         sortable: true
+    content:
+        label: 'numencode.fundamentals::lang.field.content'
+        type: text
+        searchable: true
+        sortable: true
+        invisible: true
     item_count:
         label: 'numencode.fundamentals::lang.item.count'
         type: number

@@ -1,19 +1,26 @@
 {% set group = __SELF__.highlight %}
 
-<h1 class="my-4">{{ group.title }}</h1>
-
-<div class="row">
-    {% for highlight in group.items %}
-        <div class="col-lg-4 mb-4 highlight-item-{{ loop.index0 }}">
-            <div class="card h-100">
-                <h4 class="card-header">{{ highlight.title }}</h4>
-                <div class="card-body">
-                    <p class="card-text">{{ highlight.content }}</p>
-                </div>
-                <div class="card-footer">
-                    <a class="btn btn-primary" href="{{ highlight.link }}">{{ highlight.link_title }}</a>
-                </div>
-            </div>
+{% for item in group.items %}
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>{{ item.title }}</h2>
+            {{ item.content|raw }}
         </div>
-    {% endfor %}
-</div>
+        <div class="col-lg-6">
+            {% if item.picture %}
+                <img class="img-fluid rounded fr-fic fr-dii" src="{{ item.picture|media|resize('700x400.crop') }}" alt="{{ item.title }}">
+            {% endif %}
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <p>{{ item.subtitle }}</p>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-lg btn-secondary btn-block" href="{{ item.link }}">{{ item.link_title }}</a>
+        </div>
+    </div>
+{% endfor %}

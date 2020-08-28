@@ -12,6 +12,7 @@ class BuilderTableCreateNumencodeWidgetsPromotionsGroups extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
             $table->string('title', 255)->nullable();
+            $table->text('content')->nullable();
             $table->boolean('is_published');
             $table->timestamps();
             $table->softDeletes();

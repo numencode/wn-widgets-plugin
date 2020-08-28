@@ -10,8 +10,8 @@ fields:
     content:
         label: 'numencode.fundamentals::lang.field.content'
         span: full
-        size: small
-        type: textarea
+        size: large
+        type: richeditor
     picture:
         label: 'numencode.fundamentals::lang.field.picture'
         mode: image
