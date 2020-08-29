@@ -8,7 +8,7 @@ class Promotions extends ComponentBase
     /**
      * @var PromotionGroup The promotion group model used for displaying promotion items.
      */
-    public $promotion;
+    public $group;
 
     public function componentDetails()
     {
@@ -50,7 +50,7 @@ class Promotions extends ComponentBase
 
     public function onRun()
     {
-        $this->promotion = $this->loadPromotion();
+        $this->group = $this->loadGroup();
     }
 
     public function onRender()
@@ -62,7 +62,7 @@ class Promotions extends ComponentBase
         return $this->renderPartial('@' . $layout . '.htm');
     }
 
-    protected function loadPromotion()
+    protected function loadGroup()
     {
         return PromotionGroup::find($this->property('title'));
     }

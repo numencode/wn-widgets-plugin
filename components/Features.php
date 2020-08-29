@@ -8,7 +8,7 @@ class Features extends ComponentBase
     /**
      * @var FeatureGroup The feature group model used for displaying feature items.
      */
-    public $feature;
+    public $group;
 
     public function componentDetails()
     {
@@ -51,7 +51,7 @@ class Features extends ComponentBase
 
     public function onRun()
     {
-        $this->feature = $this->loadFeature();
+        $this->group = $this->loadGroup();
     }
 
     public function onRender()
@@ -63,7 +63,7 @@ class Features extends ComponentBase
         return $this->renderPartial('@' . $layout . '.htm');
     }
 
-    protected function loadFeature()
+    protected function loadGroup()
     {
         return FeatureGroup::find($this->property('title'));
     }

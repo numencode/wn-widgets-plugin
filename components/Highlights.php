@@ -8,7 +8,7 @@ class Highlights extends ComponentBase
     /**
      * @var HighlighGroup The highlight group model used for displaying highlight items.
      */
-    public $highlight;
+    public $group;
 
     public function componentDetails()
     {
@@ -50,7 +50,7 @@ class Highlights extends ComponentBase
 
     public function onRun()
     {
-        $this->highlight = $this->loadHighlight();
+        $this->group = $this->loadGroup();
     }
 
     public function onRender()
@@ -62,7 +62,7 @@ class Highlights extends ComponentBase
         return $this->renderPartial('@' . $layout . '.htm');
     }
 
-    protected function loadHighlight()
+    protected function loadGroup()
     {
         return HighlightGroup::find($this->property('title'));
     }
