@@ -25,6 +25,8 @@ class PromotionGroup extends Model
     protected $fillable = [
         'title',
         'content',
+        'link',
+        'link_title',
         'is_published',
     ];
 

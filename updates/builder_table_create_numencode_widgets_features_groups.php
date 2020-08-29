@@ -13,6 +13,8 @@ class BuilderTableCreateNumencodeWidgetsFeaturesGroups extends Migration
             $table->increments('id')->unsigned();
             $table->string('title', 255)->nullable();
             $table->text('content')->nullable();
+            $table->string('link')->nullable();
+            $table->string('link_title')->nullable();
             $table->boolean('is_published');
             $table->timestamps();
             $table->softDeletes();

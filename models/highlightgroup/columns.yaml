@@ -10,6 +10,18 @@ columns:
         searchable: true
         sortable: true
         invisible: true
+    link:
+        label: 'numencode.fundamentals::lang.field.link'
+        type: text
+        searchable: true
+        sortable: true
+        invisible: true
+    link_title:
+        label: 'numencode.fundamentals::lang.field.link_title'
+        type: text
+        searchable: true
+        sortable: true
+        invisible: true
     item_count:
         label: 'numencode.fundamentals::lang.item.count'
         type: number

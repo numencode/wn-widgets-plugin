@@ -19,6 +19,16 @@ tabs:
             span: full
             size: giant
             type: richeditor
+        link:
+            tab: 'numencode.fundamentals::lang.field.description'
+            label: 'numencode.fundamentals::lang.field.link'
+            span: auto
+            type: text
+        link_title:
+            tab: 'numencode.fundamentals::lang.field.description'
+            label: 'numencode.fundamentals::lang.field.link_title'
+            span: auto
+            type: text
 secondaryTabs:
     fields:
         is_published:
