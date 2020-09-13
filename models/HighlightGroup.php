@@ -49,6 +49,8 @@ class HighlightGroup extends Model
 
     public static function boot()
     {
+        parent::boot();
+
         static::extend(function ($model) {
             $model->addDynamicProperty('relationable', ['items_list' => 'items']);
         });
