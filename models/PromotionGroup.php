@@ -4,15 +4,17 @@ use Model;
 use October\Rain\Database\Traits\SoftDelete;
 use October\Rain\Database\Traits\Validation;
 use NumenCode\Fundamentals\Traits\Publishable;
-use NumenCode\Fundamentals\Traits\Relationable;
 
 class PromotionGroup extends Model
 {
-    use Publishable, Relationable, SoftDelete, Validation;
+    use Publishable, SoftDelete, Validation;
 
     public $table = 'numencode_widgets_promotions_groups';
 
-    public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
+    public $implement = [
+        '@RainLab.Translate.Behaviors.TranslatableModel',
+        '@NumenCode.Fundamentals.Behaviors.Relationable',
+    ];
 
     public $translatable = ['title'];
 
@@ -34,10 +36,6 @@ class PromotionGroup extends Model
         'is_published' => 'boolean',
     ];
 
-    public $relationable = [
-        'items_list' => 'items',
-    ];
-
     public $hasMany = [
         'items' => [PromotionItem::class, 'key' => 'group_id', 'delete' => true],
     ];
@@ -45,5 +43,12 @@ class PromotionGroup extends Model
     public function getItemCountAttribute()
     {
         return count($this->items);
+    }
+
+    public static function boot()
+    {
+        static::extend(function ($model) {
+            $model->addDynamicProperty('relationable', ['items_list' => 'items']);
+        });
     }
 }
