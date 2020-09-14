@@ -13,7 +13,7 @@ class FeatureGroup extends Model
 
     public $implement = [
         '@RainLab.Translate.Behaviors.TranslatableModel',
-        '@NumenCode.Fundamentals.Behaviors.Relationable',
+        '@NumenCode.Fundamentals.Behaviors.RelationableModel',
     ];
 
     public $translatable = ['title'];
