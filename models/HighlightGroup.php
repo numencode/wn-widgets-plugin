@@ -38,6 +38,10 @@ class HighlightGroup extends Model
         'is_published' => 'boolean',
     ];
 
+    public $relationable = [
+        'items_list' => 'items',
+    ];
+
     public $hasMany = [
         'items' => [HighlightItem::class, 'key' => 'group_id', 'delete' => true],
     ];
@@ -45,14 +49,5 @@ class HighlightGroup extends Model
     public function getItemCountAttribute()
     {
         return count($this->items);
-    }
-
-    public static function boot()
-    {
-        parent::boot();
-
-        static::extend(function ($model) {
-            $model->addDynamicProperty('relationable', ['items_list' => 'items']);
-        });
     }
 }
