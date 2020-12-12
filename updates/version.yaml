@@ -1,5 +1,5 @@
 1.0.1:
-    - 'Initialize plugin.'
+    - 'Initialize plugin'
 1.0.2:
     - 'Created table numencode_widgets_promotions_groups'
     - builder_table_create_numencode_widgets_promotions_groups.php

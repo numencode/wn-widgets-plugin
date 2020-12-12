@@ -15,17 +15,6 @@ class Plugin extends PluginBase
         'RainLab.Translate',
     ];
 
-    public function pluginDetails()
-    {
-        return [
-            'name'        => 'numencode.widgets::lang.plugin.name',
-            'description' => 'numencode.widgets::lang.plugin.description',
-            'author'      => 'Blaz Orazem',
-            'icon'        => 'oc-icon-briefcase',
-            'homepage'    => 'https://github.com/numencode/widgets-plugin',
-        ];
-    }
-
     public function boot()
     {
         CmsPermissions::revokeDelete(['owners', 'publishers'], PromotionsController::class);
@@ -59,10 +48,5 @@ class Plugin extends PluginBase
             'numencode.widgets.manage_features'   => 'numencode.widgets::lang.permissions.features',
             'numencode.widgets.manage_highlights' => 'numencode.widgets::lang.permissions.highlights',
         ];
-    }
-
-    public function registerSettings()
-    {
-        //
     }
 }

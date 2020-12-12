@@ -23,3 +23,17 @@ on the Features tab of the Widgets plugin.
 
 Highlights are visuals and descriptions and can be displayed as content cards which should be exposed on the website.
 Highlights are managed on the Highlights tab of the Widgets plugin.
+
+# Author
+
+**NumenCode Widgets plugin** was created by and is maintained by [Blaz Orazem](https://www.orazem.si/).
+
+Please write an email to [info@numencode.com](mailto:info@numencode.com) about all the things concerning this project.
+
+Follow [@blazorazem](https://twitter.com/blazorazem) on Twitter.
+
+# License
+
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+[![MIT License](https://img.shields.io/github/license/numencode/widgets-plugin?label=License&color=blue&style=flat-square&cacheSeconds=600)](https://github.com/numencode/widgets-plugin/blob/master/LICENSE.md)
