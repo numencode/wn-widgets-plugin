@@ -11,7 +11,7 @@ class FeatureItem extends Model
 
     public $table = 'numencode_widgets_features_items';
 
-    public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
+    public $implement = ['RainLab.Translate.Behaviors.TranslatableModel'];
 
     public $translatable = [
         'title',

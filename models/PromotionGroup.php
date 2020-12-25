@@ -12,11 +12,16 @@ class PromotionGroup extends Model
     public $table = 'numencode_widgets_promotions_groups';
 
     public $implement = [
-        '@RainLab.Translate.Behaviors.TranslatableModel',
-        '@NumenCode.Fundamentals.Behaviors.RelationableModel',
+        'RainLab.Translate.Behaviors.TranslatableModel',
+        'NumenCode.Fundamentals.Behaviors.RelationableModel',
     ];
 
-    public $translatable = ['title'];
+    public $translatable = [
+        'title',
+        'content',
+        'link',
+        'link_title',
+    ];
 
     public $rules = [
         'title' => 'required',
