@@ -1,4 +1,8 @@
 fields:
+    id:
+        span: auto
+        cssClass: hidden
+        type: number
     section:
         label: 'numencode.fundamentals::lang.field.section'
         span: full
