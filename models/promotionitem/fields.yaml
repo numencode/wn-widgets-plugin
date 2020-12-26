@@ -1,4 +1,10 @@
 fields:
+    section:
+        label: 'numencode.fundamentals::lang.field.section'
+        span: full
+        type: section
+        containerAttributes:
+            data-set-from: '[title]'
     title:
         label: 'numencode.fundamentals::lang.field.title'
         span: auto
