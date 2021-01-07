@@ -12,7 +12,7 @@ class FeatureGroup extends Model
     public $table = 'numencode_widgets_features_groups';
 
     public $implement = [
-        'RainLab.Translate.Behaviors.TranslatableModel',
+        '@RainLab.Translate.Behaviors.TranslatableModel',
         'NumenCode.Fundamentals.Behaviors.RelationableModel',
     ];
 

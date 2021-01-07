@@ -5,9 +5,6 @@ use NumenCode\Widgets\Models\FeatureGroup;
 
 class Features extends ComponentBase
 {
-    /**
-     * @var FeatureGroup The feature group model used for displaying feature items.
-     */
     public $group;
 
     public function componentDetails()

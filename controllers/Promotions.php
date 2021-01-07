@@ -18,7 +18,7 @@ class Promotions extends Controller
     public $bodyClass = 'compact-container';
 
     public $requiredPermissions = [
-        'manage_promotions',
+        'numencode.widgets.manage_promotions',
     ];
 
     public function __construct()

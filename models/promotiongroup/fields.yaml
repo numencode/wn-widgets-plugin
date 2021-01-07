@@ -1,38 +1,38 @@
 fields:
     title:
-        label: 'numencode.fundamentals::lang.field.title'
+        label: 'numencode.widgets::lang.field.title'
         span: full
         type: text
 tabs:
     fields:
         items_list:
-            prompt: 'numencode.fundamentals::lang.item.add'
-            tab: 'numencode.fundamentals::lang.item.items'
+            prompt: 'numencode.widgets::lang.item.add'
+            tab: 'numencode.widgets::lang.item.items'
             span: full
             type: repeater
             cssClass: 'repeater-collapsible repeater-open'
             form: $/numencode/widgets/models/promotionitem/fields.yaml
         content:
-            tab: 'numencode.fundamentals::lang.field.description'
-            label: 'numencode.fundamentals::lang.field.content'
+            tab: 'numencode.widgets::lang.field.description'
+            label: 'numencode.widgets::lang.field.content'
             span: full
             size: giant
             type: richeditor
         link:
-            tab: 'numencode.fundamentals::lang.field.description'
-            label: 'numencode.fundamentals::lang.field.link'
+            tab: 'numencode.widgets::lang.field.description'
+            label: 'numencode.widgets::lang.field.link'
             span: auto
             type: text
         link_title:
-            tab: 'numencode.fundamentals::lang.field.description'
-            label: 'numencode.fundamentals::lang.field.link_title'
+            tab: 'numencode.widgets::lang.field.description'
+            label: 'numencode.widgets::lang.field.link_title'
             span: auto
             type: text
 secondaryTabs:
     fields:
         is_published:
-            label: 'numencode.fundamentals::lang.field.is_published'
-            comment: 'numencode.fundamentals::lang.field.is_published_comment'
+            label: 'numencode.widgets::lang.field.is_published'
+            comment: 'numencode.widgets::lang.field.is_published_comment'
             span: full
             type: switch
             default: true

@@ -5,9 +5,6 @@ use NumenCode\Widgets\Models\HighlightGroup;
 
 class Highlights extends ComponentBase
 {
-    /**
-     * @var HighlighGroup The highlight group model used for displaying highlight items.
-     */
     public $group;
 
     public function componentDetails()

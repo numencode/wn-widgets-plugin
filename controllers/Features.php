@@ -18,7 +18,7 @@ class Features extends Controller
     public $bodyClass = 'compact-container';
 
     public $requiredPermissions = [
-        'manage_features',
+        'numencode.widgets.manage_features',
     ];
 
     public function __construct()

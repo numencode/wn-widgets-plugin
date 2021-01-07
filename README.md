@@ -1,6 +1,7 @@
 # Widgets plugin
 
-This plugin allows end users to create and edit various website widgets with a simple user interface.
+This plugin allows end users to create and edit various website widgets with a simple user interface. The plugin has
+full multilingual support and implements RainLab.Translate plugin.
 
 ## Counters
 
@@ -26,7 +27,7 @@ Highlights are managed on the Highlights tab of the Widgets plugin.
 
 # Author
 
-**NumenCode Widgets plugin** was created by and is maintained by [Blaz Orazem](https://www.orazem.si/).
+**NumenCode.Widgets** plugin was created by and is maintained by [Blaz Orazem](https://www.orazem.si/).
 
 Please write an email to [info@numencode.com](mailto:info@numencode.com) about all the things concerning this project.
 

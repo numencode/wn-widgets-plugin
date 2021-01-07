@@ -3,11 +3,11 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableCreateNumencodeWidgetsFeaturesGroups extends Migration
+class CreateNumencodeWidgetsPromotionsGroupsTable extends Migration
 {
     public function up()
     {
-        Schema::create('numencode_widgets_features_groups', function ($table)
+        Schema::create('numencode_widgets_promotions_groups', function ($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
@@ -23,6 +23,6 @@ class BuilderTableCreateNumencodeWidgetsFeaturesGroups extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('numencode_widgets_features_groups');
+        Schema::dropIfExists('numencode_widgets_promotions_groups');
     }
 }

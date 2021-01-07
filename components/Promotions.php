@@ -5,9 +5,6 @@ use NumenCode\Widgets\Models\PromotionGroup;
 
 class Promotions extends ComponentBase
 {
-    /**
-     * @var PromotionGroup The promotion group model used for displaying promotion items.
-     */
     public $group;
 
     public function componentDetails()

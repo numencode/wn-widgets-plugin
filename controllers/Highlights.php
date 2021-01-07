@@ -18,7 +18,7 @@ class Highlights extends Controller
     public $bodyClass = 'compact-container';
 
     public $requiredPermissions = [
-        'manage_highlights',
+        'numencode.widgets.manage_highlights',
     ];
 
     public function __construct()

@@ -11,7 +11,7 @@ class HighlightItem extends Model
 
     public $table = 'numencode_widgets_highlights_items';
 
-    public $implement = ['RainLab.Translate.Behaviors.TranslatableModel'];
+    public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
     public $translatable = [
         'title',
@@ -21,9 +21,7 @@ class HighlightItem extends Model
         'link_title',
     ];
 
-    public $rules = [
-        'title' => 'required',
-    ];
+    public $rules = [];
 
     protected $fillable = [
         'title',

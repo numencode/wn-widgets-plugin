@@ -2,19 +2,19 @@
     - 'Initialize plugin'
 1.0.2:
     - 'Created table numencode_widgets_promotions_groups'
-    - builder_table_create_numencode_widgets_promotions_groups.php
+    - create_numencode_widgets_promotions_groups_table.php
 1.0.3:
     - 'Created table numencode_widgets_promotions_items'
-    - builder_table_create_numencode_widgets_promotions_items.php
+    - create_numencode_widgets_promotions_items_table.php
 1.0.4:
     - 'Created table numencode_widgets_highlights_groups'
-    - builder_table_create_numencode_widgets_highlights_groups.php
+    - create_numencode_widgets_highlights_groups_table.php
 1.0.5:
     - 'Created table numencode_widgets_highlights_items'
-    - builder_table_create_numencode_widgets_highlights_items.php
+    - create_numencode_widgets_highlights_items_table.php
 1.0.6:
     - 'Created table numencode_widgets_features_groups'
-    - builder_table_create_numencode_widgets_features_groups.php
+    - create_numencode_widgets_features_groups_table.php
 1.0.7:
     - 'Created table numencode_widgets_features_items'
-    - builder_table_create_numencode_widgets_features_items.php
+    - create_numencode_widgets_features_items_table.php

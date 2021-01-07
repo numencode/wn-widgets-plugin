@@ -4,40 +4,40 @@ fields:
         cssClass: hidden
         type: number
     section:
-        label: 'numencode.fundamentals::lang.field.section'
+        label: 'numencode.widgets::lang.field.section'
         span: full
         type: section
         containerAttributes:
             data-set-from: '[title]'
     title:
-        label: 'numencode.fundamentals::lang.field.title'
+        label: 'numencode.widgets::lang.field.title'
         span: auto
         type: text
     subtitle:
-        label: 'numencode.fundamentals::lang.field.subtitle'
+        label: 'numencode.widgets::lang.field.subtitle'
         span: auto
         type: text
     content:
-        label: 'numencode.fundamentals::lang.field.content'
+        label: 'numencode.widgets::lang.field.content'
         span: full
         size: large
         type: richeditor
     picture:
-        label: 'numencode.fundamentals::lang.field.picture'
+        label: 'numencode.widgets::lang.field.picture'
         mode: image
         span: right
         type: mediafinder
     link:
-        label: 'numencode.fundamentals::lang.field.link'
+        label: 'numencode.widgets::lang.field.link'
         span: left
         type: text
     link_title:
-        label: 'numencode.fundamentals::lang.field.link_title'
+        label: 'numencode.widgets::lang.field.link_title'
         span: left
         type: text
     is_published:
-        label: 'numencode.fundamentals::lang.field.is_published'
-        comment: 'numencode.fundamentals::lang.field.is_published_comment'
+        label: 'numencode.widgets::lang.field.is_published'
+        comment: 'numencode.widgets::lang.field.is_published_comment'
         span: left
         type: switch
         default: true

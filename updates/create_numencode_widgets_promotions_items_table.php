@@ -3,11 +3,11 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableCreateNumencodeWidgetsHighlightsItems extends Migration
+class CreateNumencodeWidgetsPromotionsItemsTable extends Migration
 {
     public function up()
     {
-        Schema::create('numencode_widgets_highlights_items', function ($table)
+        Schema::create('numencode_widgets_promotions_items', function ($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
@@ -22,12 +22,12 @@ class BuilderTableCreateNumencodeWidgetsHighlightsItems extends Migration
             $table->integer('sort_order');
             $table->timestamps();
 
-            $table->foreign('group_id')->references('id')->on('numencode_widgets_highlights_groups')->onDelete('cascade');
+            $table->foreign('group_id')->references('id')->on('numencode_widgets_promotions_groups')->onDelete('cascade');
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('numencode_widgets_highlights_items');
+        Schema::dropIfExists('numencode_widgets_promotions_items');
     }
 }

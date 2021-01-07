@@ -6,6 +6,7 @@ return [
         'description' => 'NumenCode widgets for October CMS.',
     ],
     'permissions' => [
+        'widgets'    => 'Manage widgets',
         'counters'   => 'Manage counters',
         'promotions' => 'Manage promotions',
         'highlights' => 'Manage highlights',
@@ -46,5 +47,25 @@ return [
         'layout_description' => 'Change layout for the features display',
         'group_title'        => 'Feature',
         'group_description'  => 'Displayed group of features',
+    ],
+    'field'       => [
+        'section'              => 'Section',
+        'title'                => 'Title',
+        'subtitle'             => 'Subtitle',
+        'description'          => 'Description',
+        'content'              => 'Content',
+        'picture'              => 'Picture',
+        'link'                 => 'Link',
+        'link_title'           => 'Link title',
+        'is_published'         => 'Published?',
+        'is_published_comment' => 'Unpublished items can only be viewed by administrators.',
+    ],
+    'timestamp'   => [
+        'created_at' => 'Created at',
+    ],
+    'item'        => [
+        'items' => 'Items',
+        'add'   => 'Add new item',
+        'count' => 'No. of items',
     ],
 ];

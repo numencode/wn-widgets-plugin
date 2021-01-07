@@ -12,7 +12,7 @@ class HighlightGroup extends Model
     public $table = 'numencode_widgets_highlights_groups';
 
     public $implement = [
-        'RainLab.Translate.Behaviors.TranslatableModel',
+        '@RainLab.Translate.Behaviors.TranslatableModel',
         'NumenCode.Fundamentals.Behaviors.RelationableModel',
     ];
 
