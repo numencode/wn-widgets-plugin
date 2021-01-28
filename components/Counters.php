@@ -6,7 +6,7 @@ class Counters extends ComponentBase
 {
     public $counters;
 
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name'        => 'numencode.widgets::lang.counters.name',
@@ -14,7 +14,7 @@ class Counters extends ComponentBase
         ];
     }
 
-    public function defineProperties()
+    public function defineProperties(): array
     {
         return [
             'first_title'  => [

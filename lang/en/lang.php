@@ -31,6 +31,9 @@ return [
         'layout_description' => 'Change layout for the promotions display',
         'group_title'        => 'Promotion',
         'group_description'  => 'Displayed group of promotions',
+        'manage'             => 'Manage Promotions',
+        'create'             => 'Create Promotion',
+        'update'             => 'Update Promotion',
     ],
     'highlights'  => [
         'name'               => 'Highlights',
@@ -39,6 +42,9 @@ return [
         'layout_description' => 'Change layout for the highlights display',
         'group_title'        => 'Highlight',
         'group_description'  => 'Displayed group of highlights',
+        'manage'             => 'Manage Highlights',
+        'create'             => 'Create Highlight',
+        'update'             => 'Update Highlight',
     ],
     'features'    => [
         'name'               => 'Features',
@@ -47,6 +53,9 @@ return [
         'layout_description' => 'Change layout for the features display',
         'group_title'        => 'Feature',
         'group_description'  => 'Displayed group of features',
+        'manage'             => 'Manage Features',
+        'create'             => 'Create Feature',
+        'update'             => 'Update Feature',
     ],
     'field'       => [
         'section'              => 'Section',

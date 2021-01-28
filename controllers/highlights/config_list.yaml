@@ -1,12 +1,21 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
 list: $/numencode/widgets/models/highlightgroup/columns.yaml
 modelClass: NumenCode\Widgets\Models\HighlightGroup
-title: 'numencode.widgets::lang.highlights.name'
+title: 'numencode.widgets::lang.highlights.manage'
 noRecordsMessage: 'backend::lang.list.no_records'
+recordUrl: 'numencode/widgets/highlights/update/:id'
 showSetup: true
 showCheckboxes: true
 recordsPerPage: 20
+showPageNumbers: true
+showSorting: true
+defaultSort:
+    column: title
+    direction: asc
 toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'numencode/widgets/highlights/update/:id'

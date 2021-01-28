@@ -7,7 +7,7 @@ class Features extends ComponentBase
 {
     public $group;
 
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name'        => 'numencode.widgets::lang.features.name',
@@ -15,7 +15,7 @@ class Features extends ComponentBase
         ];
     }
 
-    public function defineProperties()
+    public function defineProperties(): array
     {
         return [
             'title' => [
@@ -38,7 +38,7 @@ class Features extends ComponentBase
         return FeatureGroup::lists('title', 'id');
     }
 
-    public function getLayoutOptions()
+    public function getLayoutOptions(): array
     {
         return [
             'default' => 'Default',

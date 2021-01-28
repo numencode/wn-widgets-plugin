@@ -2,18 +2,16 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
-use Backend\Behaviors\FormController;
-use Backend\Behaviors\ListController;
 
 class Highlights extends Controller
 {
     public $implement = [
-        FormController::class,
-        ListController::class,
+        'Backend.Behaviors.FormController',
+        'Backend.Behaviors.ListController',
     ];
 
-    public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
+    public $listConfig = 'config_list.yaml';
 
     public $bodyClass = 'compact-container';
 
@@ -24,6 +22,7 @@ class Highlights extends Controller
     public function __construct()
     {
         parent::__construct();
+
         BackendMenu::setContext('NumenCode.Widgets', 'widgets', 'highlights');
     }
 }

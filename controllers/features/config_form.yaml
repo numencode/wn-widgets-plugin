@@ -1,10 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
 name: 'numencode.widgets::lang.features.name'
 form: $/numencode/widgets/models/featuregroup/fields.yaml
 modelClass: NumenCode\Widgets\Models\FeatureGroup
 defaultRedirect: numencode/widgets/features
 create:
+    title: 'numencode.widgets::lang.features.create'
     redirect: 'numencode/widgets/features/update/:id'
     redirectClose: numencode/widgets/features
 update:
+    title: 'numencode.widgets::lang.features.update'
     redirect: numencode/widgets/features
     redirectClose: numencode/widgets/features

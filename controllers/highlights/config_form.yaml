@@ -1,10 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
 name: 'numencode.widgets::lang.highlights.name'
 form: $/numencode/widgets/models/highlightgroup/fields.yaml
 modelClass: NumenCode\Widgets\Models\HighlightGroup
 defaultRedirect: numencode/widgets/highlights
 create:
+    title: 'numencode.widgets::lang.highlights.create'
     redirect: 'numencode/widgets/highlights/update/:id'
     redirectClose: numencode/widgets/highlights
 update:
+    title: 'numencode.widgets::lang.highlights.update'
     redirect: numencode/widgets/highlights
     redirectClose: numencode/widgets/highlights
