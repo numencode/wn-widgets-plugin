@@ -51,7 +51,7 @@ class HighlightGroup extends Model
         'items' => [HighlightItem::class, 'key' => 'group_id', 'delete' => true],
     ];
 
-    public function getItemCountAttribute()
+    public function getItemCountAttribute(): int
     {
         return count($this->items);
     }

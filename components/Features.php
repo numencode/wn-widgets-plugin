@@ -33,19 +33,6 @@ class Features extends ComponentBase
         ];
     }
 
-    public function getTitleOptions()
-    {
-        return FeatureGroup::lists('title', 'id');
-    }
-
-    public function getLayoutOptions(): array
-    {
-        return [
-            'default' => 'Default',
-            'media'   => 'Default with pictures',
-        ];
-    }
-
     public function onRun()
     {
         $this->group = $this->loadGroup();
@@ -58,6 +45,19 @@ class Features extends ComponentBase
         }
 
         return $this->renderPartial('@' . $layout . '.htm');
+    }
+
+    public function getTitleOptions(): array
+    {
+        return FeatureGroup::lists('title', 'id');
+    }
+
+    public function getLayoutOptions(): array
+    {
+        return [
+            'default' => 'Default',
+            'media'   => 'Default with pictures',
+        ];
     }
 
     protected function loadGroup()

@@ -33,18 +33,6 @@ class Promotions extends ComponentBase
         ];
     }
 
-    public function getTitleOptions()
-    {
-        return PromotionGroup::lists('title', 'id');
-    }
-
-    public function getLayoutOptions(): array
-    {
-        return [
-            'default' => 'Bootstrap 4',
-        ];
-    }
-
     public function onRun()
     {
         $this->group = $this->loadGroup();
@@ -57,6 +45,18 @@ class Promotions extends ComponentBase
         }
 
         return $this->renderPartial('@' . $layout . '.htm');
+    }
+
+    public function getTitleOptions(): array
+    {
+        return PromotionGroup::lists('title', 'id');
+    }
+
+    public function getLayoutOptions(): array
+    {
+        return [
+            'default' => 'Bootstrap 4',
+        ];
     }
 
     protected function loadGroup()

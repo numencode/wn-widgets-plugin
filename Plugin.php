@@ -17,7 +17,7 @@ class Plugin extends PluginBase
         'RainLab.Translate',
     ];
 
-    public function pluginDetails()
+    public function pluginDetails(): array
     {
         return [
             'name'        => 'numencode.widgets::lang.plugin.name',
@@ -33,7 +33,7 @@ class Plugin extends PluginBase
         CmsPermissions::revokeDelete(['owners', 'publishers'], PromotionsController::class);
     }
 
-    public function registerComponents()
+    public function registerComponents(): array
     {
         return [
             Counters::class   => 'counters',
@@ -43,7 +43,7 @@ class Plugin extends PluginBase
         ];
     }
 
-    public function registerPageSnippets()
+    public function registerPageSnippets(): array
     {
         return [
             Counters::class   => 'counters',
@@ -53,7 +53,7 @@ class Plugin extends PluginBase
         ];
     }
 
-    public function registerNavigation()
+    public function registerNavigation(): array
     {
         return [
             'widgets' => [
@@ -86,7 +86,7 @@ class Plugin extends PluginBase
         ];
     }
 
-    public function registerPermissions()
+    public function registerPermissions(): array
     {
         return [
             'numencode.widgets.manage_promotions' => [

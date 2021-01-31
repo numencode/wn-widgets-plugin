@@ -33,18 +33,6 @@ class Highlights extends ComponentBase
         ];
     }
 
-    public function getTitleOptions()
-    {
-        return HighlightGroup::lists('title', 'id');
-    }
-
-    public function getLayoutOptions(): array
-    {
-        return [
-            'default' => 'Default',
-        ];
-    }
-
     public function onRun()
     {
         $this->group = $this->loadGroup();
@@ -57,6 +45,18 @@ class Highlights extends ComponentBase
         }
 
         return $this->renderPartial('@' . $layout . '.htm');
+    }
+
+    public function getTitleOptions(): array
+    {
+        return HighlightGroup::lists('title', 'id');
+    }
+
+    public function getLayoutOptions(): array
+    {
+        return [
+            'default' => 'Default',
+        ];
     }
 
     protected function loadGroup()
