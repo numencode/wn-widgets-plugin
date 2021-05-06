@@ -1,9 +1,9 @@
 {
     "name": "numencode/widgets-plugin",
-    "description": "NumenCode Widgets plugin for October CMS",
-    "type": "october-plugin",
+    "description": "NumenCode Widgets plugin for Winter CMS",
+    "type": "winter-plugin",
     "homepage": "https://www.numencode.com",
-    "keywords": ["october", "cms", "octobercms", "laravel", "numencode"],
+    "keywords": ["winter", "cms", "wintercms", "laravel", "numencode"],
     "license": "MIT",
     "authors": [
         {
@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
+        "php": ">=7.2.9",
         "numencode/fundamentals-plugin": "dev-master"
     }
 }

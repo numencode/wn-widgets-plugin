@@ -1,7 +1,7 @@
 # Widgets plugin
 
 This plugin allows end users to create and edit various website widgets with a simple user interface. The plugin has
-full multilingual support and implements RainLab.Translate plugin.
+full multilingual support and implements Winter.Translate plugin.
 
 ## Counters
 

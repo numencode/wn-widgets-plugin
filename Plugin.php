@@ -14,7 +14,7 @@ class Plugin extends PluginBase
 {
     public $require = [
         'NumenCode.Fundamentals',
-        'RainLab.Translate',
+        'Winter.Translate',
     ];
 
     public function pluginDetails(): array

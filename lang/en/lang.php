@@ -3,7 +3,7 @@
 return [
     'plugin'      => [
         'name'        => 'Widgets',
-        'description' => 'NumenCode widgets for October CMS.',
+        'description' => 'NumenCode widgets for Winter CMS.',
     ],
     'permissions' => [
         'widgets'    => 'Manage widgets',

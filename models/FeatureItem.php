@@ -1,8 +1,8 @@
 <?php namespace NumenCode\Widgets\Models;
 
 use Model;
-use October\Rain\Database\Traits\Sortable;
-use October\Rain\Database\Traits\Validation;
+use Winter\Storm\Database\Traits\Sortable;
+use Winter\Storm\Database\Traits\Validation;
 use NumenCode\Fundamentals\Traits\Publishable;
 
 class FeatureItem extends Model
@@ -11,7 +11,7 @@ class FeatureItem extends Model
 
     public $table = 'numencode_widgets_features_items';
 
-    public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
+    public $implement = ['@Winter.Translate.Behaviors.TranslatableModel'];
 
     public $translatable = [
         'title',

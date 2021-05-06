@@ -1,8 +1,8 @@
 <?php namespace NumenCode\Widgets\Models;
 
 use Model;
-use October\Rain\Database\Traits\SoftDelete;
-use October\Rain\Database\Traits\Validation;
+use Winter\Storm\Database\Traits\SoftDelete;
+use Winter\Storm\Database\Traits\Validation;
 use NumenCode\Fundamentals\Traits\Publishable;
 
 class PromotionGroup extends Model
@@ -12,7 +12,7 @@ class PromotionGroup extends Model
     public $table = 'numencode_widgets_promotions_groups';
 
     public $implement = [
-        '@RainLab.Translate.Behaviors.TranslatableModel',
+        '@Winter.Translate.Behaviors.TranslatableModel',
         'NumenCode.Fundamentals.Behaviors.RelationableModel',
     ];
 
