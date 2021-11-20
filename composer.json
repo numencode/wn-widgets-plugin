@@ -15,6 +15,6 @@
     ],
     "require": {
         "php": ">=7.2.9",
-        "numencode/fundamentals-plugin": "dev-master"
+        "numencode/fundamentals-plugin": "dev-main"
     }
 }
