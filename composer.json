@@ -1,10 +1,14 @@
 {
-    "name": "numencode/widgets-plugin",
+    "name": "numencode/wn-widgets-plugin",
     "description": "NumenCode Widgets plugin for Winter CMS",
     "type": "winter-plugin",
     "homepage": "https://www.numencode.com",
     "keywords": ["winter", "cms", "wintercms", "laravel", "numencode"],
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/numencode/wn-widgets-plugin/issues",
+        "source": "https://github.com/numencode/wn-widgets-plugin"
+    },
     "authors": [
         {
             "name": "Blaz Orazem",
@@ -15,6 +19,6 @@
     ],
     "require": {
         "php": ">=7.2.9",
-        "numencode/fundamentals-plugin": "dev-master"
+        "numencode/wn-fundamentals-plugin": "dev-main"
     }
 }
