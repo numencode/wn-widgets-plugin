@@ -9,7 +9,7 @@ This package requires [Winter CMS](https://wintercms.com/) application.
 Install the package with Composer:
 
 ```bash
-composer require numencode/widgets-plugin
+composer require numencode/wn-widgets-plugin
 ```
 
 ## Details
@@ -39,15 +39,15 @@ Features are managed on the Features tab of the Widgets plugin.
 Highlights are visuals with descriptions and can be displayed as content cards which should be
 exposed on the website. Highlights are managed on the Highlights tab of the Widgets plugin.
 
-## Changelog
+# Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
-## Contributing
+# Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-## Security
+# Security
 
 If you discover any security-related issues, please email info@numencode.com instead of using the issue tracker.
 
@@ -63,4 +63,4 @@ Follow [@blazorazem](https://twitter.com/blazorazem) on Twitter.
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-[![MIT License](https://img.shields.io/github/license/numencode/widgets-plugin?label=License&color=blue&style=flat-square&cacheSeconds=600)](https://github.com/numencode/widgets-plugin/blob/master/LICENSE.md)
+[![MIT License](https://img.shields.io/github/license/numencode/widgets-plugin?label=License&color=blue&style=flat-square&cacheSeconds=600)](https://github.com/numencode/widgets-plugin/blob/main/LICENSE.md)

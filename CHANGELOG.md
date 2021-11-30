@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `numencode/widgets-plugin` will be documented in this file
+All notable changes to `numencode/wn-widgets-plugin` will be documented in this file
 
 ## 2.0.1 - 2021-11-20
 
