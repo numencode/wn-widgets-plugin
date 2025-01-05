@@ -53,7 +53,7 @@ If you discover any security-related issues, please email info@numencode.com ins
 
 # Author
 
-**NumenCode.Widgets** plugin was created by and is maintained by [Blaz Orazem](https://www.orazem.si/).
+**NumenCode.Widgets** plugin was created by and is maintained by [Blaz Orazem](https://orazem.si/).
 
 Please write an email to info@numencode.com about all the things concerning this project.
 
