@@ -19,7 +19,7 @@ class CreateNumencodeWidgetsFeaturesItemsTable extends Migration
             $table->string('link_title')->nullable();
             $table->string('picture')->nullable();
             $table->boolean('is_published');
-            $table->integer('sort_order');
+            $table->integer('sort_order')->nullable();
             $table->timestamps();
 
             $table->foreign('group_id')->references('id')->on('numencode_widgets_features_groups')->onDelete('cascade');
