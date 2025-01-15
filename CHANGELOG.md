@@ -9,8 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release of the **Widgets Plugin**.
 - Features:
-    - Support for Winter CMS.
-    - Fully compatible with Winter CMS version `1.2.7`.
+  - Support for Winter CMS.
+  - Fully compatible with Winter CMS version `1.2.7`.
 
 ---
 
