@@ -1,66 +1,103 @@
 # Widgets Plugin
 
-NumenCode Widgets plugin for Winter CMS.
+The **NumenCode Widgets** plugin for Winter CMS provides a flexible and easy-to-use solution for managing reusable
+widgets in Winter CMS. This plugin simplifies adding dynamic, visually engaging components to your themes and
+templates, enhancing the overall user experience.
 
-## Installation and usage
+[![Version](https://img.shields.io/github/v/release/numencode/wn-widgets-plugin?sort=semver&style=flat-square&color=0099FF)](https://github.com/numencode/wn-widgets-plugin/releases)
+[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/numencode/wn-widgets-plugin?style=flat-square&color=0099FF)](https://packagist.org/packages/numencode/wn-widgets-plugin)
+[![Checks](https://img.shields.io/github/check-runs/numencode/wn-widgets-plugin/main?style=flat-square)](https://github.com/numencode/wn-widgets-plugin/actions)
+[![Tests](https://img.shields.io/github/actions/workflow/status/numencode/wn-widgets-plugin/main.yml?branch=main&label=tests&style=flat-square)](https://github.com/numencode/wn-widgets-plugin/actions)
+[![License](https://img.shields.io/github/license/numencode/wn-widgets-plugin?label=open%20source&style=flat-square&color=0099FF)](https://packagist.org/packages/numencode/wn-widgets-plugin/blob/main/LICENSE.md)
 
-This package requires [Winter CMS](https://wintercms.com/) application.
+---
 
-Install the package with Composer:
+## Target Audience
+
+The target audience for this plugin includes developers and designers who want to enhance their Winter CMS projects
+by incorporating reusable, visually appealing widgets. The provided widgets, such as counters, promotions, features,
+and highlights, are commonly used in modern web design and are often found in templates and themes available on
+various marketplaces. This plugin bridges the gap between static designs and dynamic functionality.
+
+## Installation
+
+This plugin is available for installation via [Composer](http://getcomposer.org/).
 
 ```bash
 composer require numencode/wn-widgets-plugin
 ```
 
-## Details
+After installing the plugin you will need to run the migrations.
 
-This plugin allows end users to create and edit various website widgets with a simple user interface.
-The plugin has full multilingual support and implements Winter.Translate plugin.
+```bash
+php artisan migrate
+```
+
+## Requirements
+
+* Winter CMS 1.2.7 or higher.
+* PHP version 8.0 or higher.
+
+---
+
+## Features Overview
+
+This plugin provides an intuitive interface to create and manage a variety of widgets, enabling end users
+to customize their websites with ease. With multilingual support via the `Winter.Translate` plugin,
+it ensures global usability.
 
 ### Counters
 
-Display statistics or numeric information on your website with an animated attention-grabbing dynamic element
-that draws visitors in. Simply enter the number to display, fill in the text that explains what the number is
-about, and set an optional CSS class for the icon. Counters are managed via the component properties.
+Showcase statistics or numeric information on your website using dynamic and engaging animated counters.
+Enter the desired number, provide explanatory text, and optionally include an icon class for added flair.
+Counters can be easily configured through component properties.
 
 ### Promotions
 
-Promotions, such as content sliders and carousels, are simple to set up, totally customisable to the look and
-feel of your website, and allow you to showcase creative content in a relatively small footprint. Promotions
-are managed on the Promotions tab of the Widgets plugin.
+Create attention-grabbing promotional content such as sliders and carousels that seamlessly integrate
+into your website's aesthetic. Perfect for highlighting creative content within a compact space.
+Promotions are managed via the `Promotions` tab in the Widgets plugin.
 
 ### Features
 
-Features can be used to display multiple items, either as a list of items or as a slider/carousel.
-Features are managed on the Features tab of the Widgets plugin.
+Display multiple items in an organized list or an eye-catching slider/carousel format. This is ideal
+for showcasing services, products, or other grouped content. Manage features directly from the `Features` tab.
 
 ### Highlights
 
-Highlights are visuals with descriptions and can be displayed as content cards which should be
-exposed on the website. Highlights are managed on the Highlights tab of the Widgets plugin.
+Create visually striking content cards with accompanying descriptions to emphasize key aspects of your website.
+Highlights are perfect for promoting unique selling points or key features and are managed through the `Highlights` tab.
 
-# Changelog
+---
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+## Changelog
 
-# Contributing
+All notable changes are documented in the [CHANGELOG](CHANGELOG.md).
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+---
 
-# Security
+## Contributing
 
-If you discover any security-related issues, please email info@numencode.com instead of using the issue tracker.
+Please refer to the [CONTRIBUTING](CONTRIBUTING.md) guide for details on contributing to this project.
 
-# Author
+---
 
-**NumenCode.Widgets** plugin was created by and is maintained by [Blaz Orazem](https://orazem.si/).
+## Security
 
-Please write an email to info@numencode.com about all the things concerning this project.
+If you identify any security issues, email info@numencode.com rather than using the issue tracker.
 
-Follow [@blazorazem](https://twitter.com/blazorazem) on Twitter.
+---
 
-# License
+## Author
+
+The **NumenCode.Fundamentals** plugin is created and maintained by [Blaz Orazem](https://orazem.si/).
+
+For inquiries, contact: info@numencode.com
+
+---
+
+## License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-[![MIT License](https://img.shields.io/github/license/numencode/widgets-plugin?label=License&color=blue&style=flat-square&cacheSeconds=600)](https://github.com/numencode/widgets-plugin/blob/main/LICENSE.md)
+[![License](https://img.shields.io/github/license/numencode/wn-widgets-plugin?style=flat-square&color=0099FF)](https://packagist.org/packages/numencode/wn-widgets-plugin/blob/main/LICENSE.md)

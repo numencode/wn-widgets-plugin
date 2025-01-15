@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "php": ">=7.2.9",
-        "numencode/wn-fundamentals-plugin": "dev-main"
+        "php": "^8.0.2",
+        "numencode/wn-fundamentals-plugin": "^1.0.0"
     }
 }

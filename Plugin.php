@@ -24,7 +24,7 @@ class Plugin extends PluginBase
             'description' => 'numencode.widgets::lang.plugin.description',
             'author'      => 'Blaz Orazem',
             'icon'        => 'oc-icon-briefcase',
-            'homepage'    => 'https://github.com/numencode/widgets-plugin',
+            'homepage'    => 'https://github.com/numencode/wn-widgets-plugin',
         ];
     }
 
