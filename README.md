@@ -90,7 +90,7 @@ If you identify any security issues, email info@numencode.com rather than using 
 
 ## Author
 
-The **NumenCode.Fundamentals** plugin is created and maintained by [Blaz Orazem](https://orazem.si/).
+The **NumenCode.Widgets** plugin is created and maintained by [Blaz Orazem](https://orazem.si/).
 
 For inquiries, contact: info@numencode.com
 
