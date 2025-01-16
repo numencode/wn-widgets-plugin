@@ -76,6 +76,21 @@ jobs:
                   mkdir -p plugins/numencode
                   mv widgets-plugin plugins/numencode/widgets
 
+            - name: Download NumenCode.Fundamentals plugin
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  cd plugins/numencode
+                  git clone https://github.com/numencode/wn-fundamentals-plugin.git fundamentals
+
+            - name: Download Winter.Translate plugin
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  mkdir -p plugins/winter
+                  cd plugins/winter
+                  git clone https://github.com/wintercms/wn-translate-plugin.git translate
+
             - name: Get Composer cache directory
               id: composercache
               run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_ENV
@@ -91,4 +106,4 @@ jobs:
               run: composer install --no-interaction --no-progress --no-suggest
 
             - name: Run unit tests
-              run: php artisan winter:test -p NumenCode.Widgets
+              run: php artisan winter:test -p NumenCode.Widgets --configuration=plugins/numencode/widgets/phpunit.xml
