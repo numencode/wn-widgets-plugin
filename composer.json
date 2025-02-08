@@ -3,7 +3,7 @@
     "description": "NumenCode Widgets plugin for Winter CMS",
     "type": "winter-plugin",
     "homepage": "https://www.numencode.com",
-    "keywords": ["winter", "cms", "wintercms", "laravel", "numencode"],
+    "keywords": ["winter cms", "winter", "plugin", "laravel", "numencode"],
     "license": "MIT",
     "support": {
         "issues": "https://github.com/numencode/wn-widgets-plugin/issues",
@@ -19,6 +19,9 @@
     ],
     "require": {
         "php": "^8.0.2",
-        "numencode/wn-fundamentals-plugin": "dev-main"
+        "numencode/wn-fundamentals-plugin": "^1.0"
+    },
+    "extra": {
+        "installer-name": "widgets"
     }
 }

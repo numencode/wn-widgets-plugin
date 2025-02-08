@@ -12,11 +12,6 @@ use NumenCode\Widgets\Controllers\Promotions as PromotionsController;
 
 class Plugin extends PluginBase
 {
-    public $require = [
-        'NumenCode.Fundamentals',
-        'Winter.Translate',
-    ];
-
     public function pluginDetails(): array
     {
         return [

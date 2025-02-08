@@ -8,7 +8,7 @@ templates, enhancing the overall user experience.
 [![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/numencode/wn-widgets-plugin?style=flat-square&color=0099FF)](https://packagist.org/packages/numencode/wn-widgets-plugin)
 [![Checks](https://img.shields.io/github/check-runs/numencode/wn-widgets-plugin/main?style=flat-square)](https://github.com/numencode/wn-widgets-plugin/actions)
 [![Tests](https://img.shields.io/github/actions/workflow/status/numencode/wn-widgets-plugin/main.yml?branch=main&label=tests&style=flat-square)](https://github.com/numencode/wn-widgets-plugin/actions)
-[![License](https://img.shields.io/github/license/numencode/wn-widgets-plugin?label=open%20source&style=flat-square&color=0099FF)](https://packagist.org/packages/numencode/wn-widgets-plugin/blob/main/LICENSE.md)
+[![License](https://img.shields.io/github/license/numencode/wn-widgets-plugin?label=open%20source&style=flat-square&color=0099FF)](https://github.com/numencode/wn-widgets-plugin/blob/main/LICENSE.md)
 
 ---
 
@@ -30,12 +30,13 @@ composer require numencode/wn-widgets-plugin
 After installing the plugin you will need to run the migrations.
 
 ```bash
-php artisan migrate
+php artisan winter:up
 ```
 
 ## Requirements
 
-* Winter CMS 1.2.7 or higher.
+* [NumenCode Fundamentals Plugin](https://github.com/numencode/wn-fundamentals-plugin) version ^1.0 or higher.
+* [Winter CMS](https://wintercms.com/) 1.2.7 or higher.
 * PHP version 8.0 or higher.
 
 ---
@@ -100,4 +101,4 @@ For inquiries, contact: info@numencode.com
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-[![License](https://img.shields.io/github/license/numencode/wn-widgets-plugin?style=flat-square&color=0099FF)](https://packagist.org/packages/numencode/wn-widgets-plugin/blob/main/LICENSE.md)
+[![License](https://img.shields.io/github/license/numencode/wn-widgets-plugin?style=flat-square&color=0099FF)](https://github.com/numencode/wn-widgets-plugin/blob/main/LICENSE.md)
