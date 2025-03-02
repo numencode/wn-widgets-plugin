@@ -57,6 +57,17 @@ return [
         'create'             => 'Create Feature',
         'update'             => 'Update Feature',
     ],
+    'gallery'     => [
+        'name'               => 'Gallery',
+        'description'        => 'Create and manage various photo galleries for the website.',
+        'layout_title'       => 'Layout',
+        'layout_description' => 'Change layout for the gallery display',
+        'group_title'        => 'Gallery',
+        'group_description'  => 'Displayed group of gallery',
+        'manage'             => 'Manage Galleries',
+        'create'             => 'Create Gallery',
+        'update'             => 'Update Gallery',
+    ],
     'field'       => [
         'section'              => 'Section',
         'title'                => 'Title',

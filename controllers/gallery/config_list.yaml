@@ -1,0 +1,21 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+list: $/numencode/widgets/models/gallerygroup/columns.yaml
+modelClass: NumenCode\Widgets\Models\GalleryGroup
+title: 'numencode.widgets::lang.gallery.manage'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordUrl: 'numencode/widgets/gallery/update/:id'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+showPageNumbers: true
+showSorting: true
+defaultSort:
+    column: title
+    direction: asc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

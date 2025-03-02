@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: 'numencode.widgets::lang.gallery.name'
+form: $/numencode/widgets/models/gallerygroup/fields.yaml
+modelClass: NumenCode\Widgets\Models\GalleryGroup
+defaultRedirect: numencode/widgets/gallery
+create:
+    title: 'numencode.widgets::lang.gallery.create'
+    redirect: 'numencode/widgets/gallery/update/:id'
+    redirectClose: numencode/widgets/gallery
+update:
+    title: 'numencode.widgets::lang.gallery.update'
+    redirect: numencode/widgets/gallery
+    redirectClose: numencode/widgets/gallery

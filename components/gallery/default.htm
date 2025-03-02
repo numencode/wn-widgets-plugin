@@ -1,0 +1,19 @@
+{% set group = __SELF__.group %}
+
+<h1 class="my-4">{{ group.title }}</h1>
+
+<div class="row">
+    {% for item in group.items %}
+        <div class="col-lg-4 mb-4 highlight-item-{{ loop.index0 }}">
+            <div class="card h-100">
+                <h4 class="card-header">{{ item.title }}</h4>
+                <div class="card-body">
+                    <p class="card-text">{{ item.content|striptags }}</p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-primary" href="{{ item.link }}">{{ item.link_title }}</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

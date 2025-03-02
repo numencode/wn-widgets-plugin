@@ -3,6 +3,7 @@
 use Backend;
 use BackendAuth;
 use System\Classes\PluginBase;
+use NumenCode\Widgets\Components\Gallery;
 use NumenCode\Widgets\Components\Counters;
 use NumenCode\Widgets\Components\Features;
 use NumenCode\Widgets\Components\Highlights;
@@ -35,6 +36,7 @@ class Plugin extends PluginBase
             Promotions::class => 'promotions',
             Features::class   => 'features',
             Highlights::class => 'highlights',
+            Gallery::class    => 'gallery',
         ];
     }
 
@@ -45,6 +47,7 @@ class Plugin extends PluginBase
             Promotions::class => 'promotions',
             Features::class   => 'features',
             Highlights::class => 'highlights',
+            Gallery::class    => 'gallery',
         ];
     }
 
@@ -60,7 +63,7 @@ class Plugin extends PluginBase
                 'sideMenu'    => [
                     'promotions' => [
                         'label'       => 'numencode.widgets::lang.promotions.name',
-                        'icon'        => 'icon-th-large',
+                        'icon'        => 'icon-picture-o',
                         'url'         => Backend::url('numencode/widgets/promotions'),
                         'permissions' => ['numencode.widgets.manage_promotions'],
                     ],
@@ -75,6 +78,12 @@ class Plugin extends PluginBase
                         'icon'        => 'icon-star',
                         'url'         => Backend::url('numencode/widgets/highlights'),
                         'permissions' => ['numencode.widgets.manage_highlights'],
+                    ],
+                    'gallery'    => [
+                        'label'       => 'numencode.widgets::lang.gallery.name',
+                        'icon'        => 'icon-camera-retro',
+                        'url'         => Backend::url('numencode/widgets/gallery'),
+                        'permissions' => ['numencode.widgets.manage_gallery'],
                     ],
                 ],
             ],
@@ -96,6 +105,10 @@ class Plugin extends PluginBase
                 'tab'   => 'numencode.widgets::lang.plugin.name',
                 'label' => 'numencode.widgets::lang.permissions.highlights',
             ],
+            'numencode.widgets.manage_gallery' => [
+                'tab'   => 'numencode.widgets::lang.plugin.name',
+                'label' => 'numencode.widgets::lang.permissions.gallery',
+            ],
         ];
     }
 
@@ -113,6 +126,10 @@ class Plugin extends PluginBase
 
         if ($user->hasPermission('numencode.widgets.manage_highlights')) {
             return Backend::url('numencode/widgets/highlights');
+        }
+
+        if ($user->hasPermission('numencode.widgets.manage_gallery')) {
+            return Backend::url('numencode/widgets/gallery');
         }
 
         return Backend::url('/');

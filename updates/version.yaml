@@ -18,3 +18,9 @@
 1.0.7:
     - 'Created table numencode_widgets_features_items'
     - create_numencode_widgets_features_items_table.php
+1.0.8:
+    - 'Created table numencode_widgets_gallery_groups'
+    - create_numencode_widgets_gallery_groups_table.php
+1.0.9:
+    - 'Created table numencode_widgets_gallery_items'
+    - create_numencode_widgets_gallery_items_table.php

@@ -1,0 +1,34 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        span: auto
+        cssClass: hidden
+        type: number
+    section:
+        label: 'numencode.widgets::lang.field.section'
+        span: full
+        type: section
+        containerAttributes:
+            data-set-from: '[title]'
+    picture:
+        label: 'numencode.widgets::lang.field.picture'
+        mode: image
+        span: right
+        type: mediafinder
+    title:
+        label: 'numencode.widgets::lang.field.title'
+        span: left
+        type: text
+    subtitle:
+        label: 'numencode.widgets::lang.field.subtitle'
+        span: left
+        type: text
+    is_published:
+        label: 'numencode.widgets::lang.field.is_published'
+        comment: 'numencode.widgets::lang.field.is_published_comment'
+        span: left
+        type: switch
+        default: true

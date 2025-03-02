@@ -16,8 +16,8 @@ templates, enhancing the overall user experience.
 
 The target audience for this plugin includes developers and designers who want to enhance their Winter CMS projects
 by incorporating reusable, visually appealing widgets. The provided widgets, such as counters, promotions, features,
-and highlights, are commonly used in modern web design and are often found in templates and themes available on
-various marketplaces. This plugin bridges the gap between static designs and dynamic functionality.
+highlights, and galleries, are commonly used in modern web design and are often found in templates and themes
+available on various marketplaces. This plugin bridges the gap between static designs and dynamic functionality.
 
 ## Installation
 
