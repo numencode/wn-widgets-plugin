@@ -69,6 +69,12 @@ for showcasing services, products, or other grouped content. Manage features dir
 Create visually striking content cards with accompanying descriptions to emphasize key aspects of your website.
 Highlights are perfect for promoting unique selling points or key features and are managed through the `Highlights` tab.
 
+### Gallery
+
+Easily create and manage multiple image galleries with a flexible and intuitive interface. Upload, reorder,
+and showcase images using the dedicated Gallery component, which seamlessly integrates into any page.
+Manage galleries via the `Gallery` tab in the Widgets plugin.
+
 ---
 
 ## Changelog
