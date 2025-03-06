@@ -4,7 +4,7 @@ The **NumenCode Widgets** plugin for Winter CMS provides a flexible and easy-to-
 widgets in Winter CMS. This plugin simplifies adding dynamic, visually engaging components to your themes and
 templates, enhancing the overall user experience.
 
-[![Version](https://img.shields.io/github/v/release/numencode/wn-widgets-plugin?sort=semver&style=flat-square&color=0099FF)](https://github.com/numencode/wn-widgets-plugin/releases)
+[![Version](https://img.shields.io/github/v/release/numencode/wn-widgets-plugin?style=flat-square&color=0099FF)](https://github.com/numencode/wn-widgets-plugin/releases)
 [![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/numencode/wn-widgets-plugin?style=flat-square&color=0099FF)](https://packagist.org/packages/numencode/wn-widgets-plugin)
 [![Checks](https://img.shields.io/github/check-runs/numencode/wn-widgets-plugin/main?style=flat-square)](https://github.com/numencode/wn-widgets-plugin/actions)
 [![Tests](https://img.shields.io/github/actions/workflow/status/numencode/wn-widgets-plugin/tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/numencode/wn-widgets-plugin/actions)
