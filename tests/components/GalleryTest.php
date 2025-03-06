@@ -1,9 +1,9 @@
 <?php namespace NumenCode\Widgets\Tests\Components;
 
-use Mockery;
 use PluginTestCase;
 use NumenCode\Widgets\Components\Gallery;
 use NumenCode\Widgets\Models\GalleryGroup;
+use Mockery;
 
 class GalleryTest extends PluginTestCase
 {
@@ -23,10 +23,12 @@ class GalleryTest extends PluginTestCase
         $properties = $component->defineProperties();
         $this->assertArrayHasKey('title', $properties);
         $this->assertArrayHasKey('layout', $properties);
+        $this->assertArrayHasKey('items_per_row', $properties);
 
         // Check default values
         $this->assertEquals('default', $properties['title']['default']);
         $this->assertEquals('default', $properties['layout']['default']);
+        $this->assertEquals('4', $properties['items_per_row']['default']);
     }
 
     /**
@@ -59,21 +61,19 @@ class GalleryTest extends PluginTestCase
 
         $layoutOptions = $component->getLayoutOptions();
         $this->assertArrayHasKey('default', $layoutOptions);
-        $this->assertArrayHasKey('media', $layoutOptions);
         $this->assertEquals('Default', $layoutOptions['default']);
-        $this->assertEquals('Default with pictures', $layoutOptions['media']);
     }
 
     /**
-     * Test the onRun method loads the correct group.
+     * Test the onRun method loads the correct gallery.
      */
-    public function testOnRunLoadsGroup(): void
+    public function testOnRunLoadsGallery(): void
     {
-        // Mock GalleryGroup::find to return a dummy group
+        // Mock GalleryGroup::find to return a dummy gallery
         $mock = Mockery::mock('alias:' . GalleryGroup::class);
         $mock->shouldReceive('find')->with(1)->once()->andReturn([
             'id'    => 1,
-            'title' => 'Sample Group',
+            'title' => 'Sample Gallery',
         ]);
 
         $component = new Gallery();
@@ -81,9 +81,9 @@ class GalleryTest extends PluginTestCase
 
         $component->onRun();
 
-        $this->assertIsArray($component->group);
-        $this->assertEquals(1, $component->group['id']);
-        $this->assertEquals('Sample Group', $component->group['title']);
+        $this->assertIsArray($component->gallery);
+        $this->assertEquals(1, $component->gallery['id']);
+        $this->assertEquals('Sample Gallery', $component->gallery['title']);
     }
 
     /**
@@ -95,13 +95,13 @@ class GalleryTest extends PluginTestCase
 
         // Mock renderPartial to check the rendered layout
         $component->shouldReceive('renderPartial')
-            ->with('@media.htm')
-            ->andReturn('Rendered Media Layout');
+            ->with('@custom.htm')
+            ->andReturn('Rendered Custom Layout');
 
-        $component->setProperty('layout', 'media');
+        $component->setProperty('layout', 'custom');
 
         $output = $component->onRender();
-        $this->assertEquals('Rendered Media Layout', $output);
+        $this->assertEquals('Rendered Custom Layout', $output);
     }
 
     /**

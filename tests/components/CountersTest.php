@@ -29,7 +29,7 @@ class CountersTest extends PluginTestCase
         // Check default values of properties
         $this->assertEquals('100', $properties['first_value']['default']);
         $this->assertEquals('^[0-9]+$', $properties['first_value']['validationPattern']);
-        $this->assertEquals('Value can contain only numeric symbols', $properties['first_value']['validationMessage']);
+        $this->assertEquals('numencode.widgets::lang.validation.numeric', $properties['first_value']['validationMessage']);
     }
 
     /**
