@@ -1,19 +1,37 @@
-{% set group = __SELF__.group %}
+{% set gallery = __SELF__.gallery %}
+{% set itemsPerRow = __SELF__.itemsPerRow|default(4) %}
+{% set colClass = 'col-lg-' ~ (12 // itemsPerRow) ~ ' col-sm-6' %}
 
-<h1 class="my-4">{{ group.title }}</h1>
+<h2>{{ gallery.title }}</h2>
+
+{% if gallery.content %}
+    <p>{{ gallery.content|raw }}</p>
+{% endif %}
 
 <div class="row">
-    {% for item in group.items %}
-        <div class="col-lg-4 mb-4 highlight-item-{{ loop.index0 }}">
+    {% for item in gallery.items_list %}
+        <div class="{{ colClass }} gallery-item">
             <div class="card h-100">
-                <h4 class="card-header">{{ item.title }}</h4>
-                <div class="card-body">
-                    <p class="card-text">{{ item.content|striptags }}</p>
-                </div>
-                <div class="card-footer">
-                    <a class="btn btn-primary" href="{{ item.link }}">{{ item.link_title }}</a>
+                {% if item.picture %}
+                    <a href="{{ item.picture|media }}" data-lightbox="gallery">
+                        <img class="card-img-top" src="{{ item.picture|media|resize('700x400.crop') }}" alt="{{ item.title }}">
+                    </a>
+                {% endif %}
+                <div class="card-body text-center">
+                    {% if item.title %}
+                        <h5 class="card-title">{{ item.title }}</h5>
+                    {% endif %}
+                    {% if item.subtitle %}
+                        <p class="card-subtitle text-muted">{{ item.subtitle }}</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
     {% endfor %}
 </div>
+
+{% if gallery.link and gallery.link_title %}
+    <div class="text-center mt-3">
+        <a href="{{ gallery.link }}" class="btn btn-primary">{{ gallery.link_title }}</a>
+    </div>
+{% endif %}

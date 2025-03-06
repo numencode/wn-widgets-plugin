@@ -5,7 +5,8 @@ use NumenCode\Widgets\Models\GalleryGroup;
 
 class Gallery extends ComponentBase
 {
-    public $group;
+    public $gallery;
+    public $itemsPerRow;
 
     public function componentDetails(): array
     {
@@ -18,24 +19,32 @@ class Gallery extends ComponentBase
     public function defineProperties(): array
     {
         return [
-            'title' => [
-                'title'       => 'numencode.widgets::lang.gallery.group_title',
-                'description' => 'numencode.widgets::lang.gallery.group_description',
+            'title'         => [
+                'title'       => 'numencode.widgets::lang.gallery.gallery_title',
+                'description' => 'numencode.widgets::lang.gallery.gallery_description',
                 'type'        => 'dropdown',
                 'default'     => 'default',
             ],
-            'layout' => [
+            'layout'        => [
                 'title'       => 'numencode.widgets::lang.gallery.layout_title',
                 'description' => 'numencode.widgets::lang.gallery.layout_description',
                 'type'        => 'dropdown',
                 'default'     => 'default',
+            ],
+            'items_per_row' => [
+                'title'             => 'numencode.widgets::lang.gallery.items_per_row',
+                'type'              => 'string',
+                'default'           => '4',
+                'validationPattern' => '^[0-9]+$',
+                'validationMessage' => 'Value can contain only numeric symbols',
             ],
         ];
     }
 
     public function onRun()
     {
-        $this->group = $this->loadGroup();
+        $this->gallery = $this->loadGallery();
+        $this->itemsPerRow = $this->property('items_per_row') ?? 4;
     }
 
     public function onRender()
@@ -56,11 +65,10 @@ class Gallery extends ComponentBase
     {
         return [
             'default' => 'Default',
-            'media'   => 'Default with pictures',
         ];
     }
 
-    protected function loadGroup()
+    protected function loadGallery()
     {
         return GalleryGroup::find($this->property('title'));
     }

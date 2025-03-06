@@ -33,7 +33,7 @@ class Counters extends ComponentBase
                 'type'              => 'string',
                 'default'           => '100',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'Value can contain only numeric symbols',
+                'validationMessage' => 'numencode.widgets::lang.validation.numeric',
                 'group'             => 'numencode.widgets::lang.counters.first_counter',
             ],
             'second_title' => [
@@ -52,7 +52,7 @@ class Counters extends ComponentBase
                 'type'              => 'string',
                 'default'           => '100',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'Value can contain only numeric symbols',
+                'validationMessage' => 'numencode.widgets::lang.validation.numeric',
                 'group'             => 'numencode.widgets::lang.counters.second_counter',
             ],
             'third_title'  => [
@@ -71,7 +71,7 @@ class Counters extends ComponentBase
                 'type'              => 'string',
                 'default'           => '100',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'Value can contain only numeric symbols',
+                'validationMessage' => 'numencode.widgets::lang.validation.numeric',
                 'group'             => 'numencode.widgets::lang.counters.third_counter',
             ],
             'fourth_title' => [
@@ -90,7 +90,7 @@ class Counters extends ComponentBase
                 'type'              => 'string',
                 'default'           => '100',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'Value can contain only numeric symbols',
+                'validationMessage' => 'numencode.widgets::lang.validation.numeric',
                 'group'             => 'numencode.widgets::lang.counters.fourth_counter',
             ],
         ];

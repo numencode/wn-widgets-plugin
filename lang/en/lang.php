@@ -26,7 +26,7 @@ return [
     ],
     'promotions'  => [
         'name'               => 'Promotions',
-        'description'        => 'Create and manage various promotions for the website.',
+        'description'        => 'Display various promotions.',
         'layout_title'       => 'Layout',
         'layout_description' => 'Change layout for the promotions display',
         'group_title'        => 'Promotion',
@@ -37,7 +37,7 @@ return [
     ],
     'highlights'  => [
         'name'               => 'Highlights',
-        'description'        => 'Create and manage various highlights for the website.',
+        'description'        => 'Display various highlights.',
         'layout_title'       => 'Layout',
         'layout_description' => 'Change layout for the highlights display',
         'group_title'        => 'Highlight',
@@ -48,7 +48,7 @@ return [
     ],
     'features'    => [
         'name'               => 'Features',
-        'description'        => 'Create and manage various features for the website.',
+        'description'        => 'Display various features.',
         'layout_title'       => 'Layout',
         'layout_description' => 'Change layout for the features display',
         'group_title'        => 'Feature',
@@ -58,15 +58,16 @@ return [
         'update'             => 'Update Feature',
     ],
     'gallery'     => [
-        'name'               => 'Gallery',
-        'description'        => 'Create and manage various photo galleries for the website.',
-        'layout_title'       => 'Layout',
-        'layout_description' => 'Change layout for the gallery display',
-        'group_title'        => 'Gallery',
-        'group_description'  => 'Displayed group of gallery',
-        'manage'             => 'Manage Galleries',
-        'create'             => 'Create Gallery',
-        'update'             => 'Update Gallery',
+        'name'                => 'Gallery',
+        'description'         => 'Display a single image gallery.',
+        'layout_title'        => 'Layout',
+        'layout_description'  => 'Change layout for the gallery display',
+        'gallery_title'       => 'Gallery',
+        'gallery_description' => 'Displayed gallery',
+        'items_per_row'       => 'Items per row',
+        'manage'              => 'Manage Galleries',
+        'create'              => 'Create Gallery',
+        'update'              => 'Update Gallery',
     ],
     'field'       => [
         'section'              => 'Section',
@@ -87,5 +88,8 @@ return [
         'items' => 'Items',
         'add'   => 'Add new item',
         'count' => 'No. of items',
+    ],
+    'validation'  => [
+        'numeric' => 'Value can contain only numeric symbols',
     ],
 ];
