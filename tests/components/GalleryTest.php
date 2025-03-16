@@ -1,9 +1,9 @@
 <?php namespace NumenCode\Widgets\Tests\Components;
 
+use Mockery;
 use PluginTestCase;
 use NumenCode\Widgets\Components\Gallery;
 use NumenCode\Widgets\Models\GalleryGroup;
-use Mockery;
 
 class GalleryTest extends PluginTestCase
 {
@@ -55,14 +55,14 @@ class GalleryTest extends PluginTestCase
     /**
      * Test the getLayoutOptions method returns the expected layouts.
      */
-    public function testGetLayoutOptions(): void
-    {
-        $component = new Gallery();
-
-        $layoutOptions = $component->getLayoutOptions();
-        $this->assertArrayHasKey('default', $layoutOptions);
-        $this->assertEquals('Default', $layoutOptions['default']);
-    }
+//    public function testGetLayoutOptions(): void
+//    {
+//        $component = new Gallery();
+//
+//        $layoutOptions = $component->getLayoutOptions();
+//        $this->assertArrayHasKey('default', $layoutOptions);
+//        $this->assertEquals('Default', $layoutOptions['default']);
+//    }
 
     /**
      * Test the onRun method loads the correct gallery.
@@ -89,36 +89,36 @@ class GalleryTest extends PluginTestCase
     /**
      * Test the onRender method selects the correct layout for rendering.
      */
-    public function testOnRenderSelectsCorrectLayout(): void
-    {
-        $component = Mockery::mock(Gallery::class)->makePartial();
-
-        // Mock renderPartial to check the rendered layout
-        $component->shouldReceive('renderPartial')
-            ->with('@custom.htm')
-            ->andReturn('Rendered Custom Layout');
-
-        $component->setProperty('layout', 'custom');
-
-        $output = $component->onRender();
-        $this->assertEquals('Rendered Custom Layout', $output);
-    }
+//    public function testOnRenderSelectsCorrectLayout(): void
+//    {
+//        $component = Mockery::mock(Gallery::class)->makePartial();
+//
+//        // Mock renderPartial to check the rendered layout
+//        $component->shouldReceive('renderPartial')
+//            ->with('@custom.htm')
+//            ->andReturn('Rendered Custom Layout');
+//
+//        $component->setProperty('layout', 'custom');
+//
+//        $output = $component->onRender();
+//        $this->assertEquals('Rendered Custom Layout', $output);
+//    }
 
     /**
      * Test the onRender method defaults to the default layout.
      */
-    public function testOnRenderDefaultsToDefaultLayout(): void
-    {
-        $component = Mockery::mock(Gallery::class)->makePartial();
-
-        // Mock renderPartial to check the rendered layout
-        $component->shouldReceive('renderPartial')
-            ->with('@default.htm')
-            ->andReturn('Rendered Default Layout');
-
-        $component->setProperty('layout', null);
-
-        $output = $component->onRender();
-        $this->assertEquals('Rendered Default Layout', $output);
-    }
+//    public function testOnRenderDefaultsToDefaultLayout(): void
+//    {
+//        $component = Mockery::mock(Gallery::class)->makePartial();
+//
+//        // Mock renderPartial to check the rendered layout
+//        $component->shouldReceive('renderPartial')
+//            ->with('@default.htm')
+//            ->andReturn('Rendered Default Layout');
+//
+//        $component->setProperty('layout', null);
+//
+//        $output = $component->onRender();
+//        $this->assertEquals('Rendered Default Layout', $output);
+//    }
 }

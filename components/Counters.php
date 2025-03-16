@@ -1,9 +1,12 @@
 <?php namespace NumenCode\Widgets\Components;
 
 use Cms\Classes\ComponentBase;
+use NumenCode\Fundamentals\Traits\ComponentRenderer;
 
 class Counters extends ComponentBase
 {
+    use ComponentRenderer;
+
     public $counters;
 
     public function componentDetails(): array

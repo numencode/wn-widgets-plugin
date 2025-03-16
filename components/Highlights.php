@@ -2,9 +2,12 @@
 
 use Cms\Classes\ComponentBase;
 use NumenCode\Widgets\Models\HighlightGroup;
+use NumenCode\Fundamentals\Traits\ComponentRenderer;
 
 class Highlights extends ComponentBase
 {
+    use ComponentRenderer;
+
     public $group;
 
     public function componentDetails(): array
@@ -38,25 +41,9 @@ class Highlights extends ComponentBase
         $this->group = $this->loadGroup();
     }
 
-    public function onRender()
-    {
-        if (!$layout = $this->property('layout')) {
-            $layout = 'default';
-        }
-
-        return $this->renderPartial('@' . $layout . '.htm');
-    }
-
     public function getTitleOptions(): array
     {
         return HighlightGroup::lists('title', 'id');
-    }
-
-    public function getLayoutOptions(): array
-    {
-        return [
-            'default' => 'Default',
-        ];
     }
 
     protected function loadGroup()

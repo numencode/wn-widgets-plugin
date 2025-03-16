@@ -2,9 +2,12 @@
 
 use Cms\Classes\ComponentBase;
 use NumenCode\Widgets\Models\FeatureGroup;
+use NumenCode\Fundamentals\Traits\ComponentRenderer;
 
 class Features extends ComponentBase
 {
+    use ComponentRenderer;
+
     public $group;
 
     public function componentDetails(): array
@@ -38,26 +41,9 @@ class Features extends ComponentBase
         $this->group = $this->loadGroup();
     }
 
-    public function onRender()
-    {
-        if (!$layout = $this->property('layout')) {
-            $layout = 'default';
-        }
-
-        return $this->renderPartial('@' . $layout . '.htm');
-    }
-
     public function getTitleOptions(): array
     {
         return FeatureGroup::lists('title', 'id');
-    }
-
-    public function getLayoutOptions(): array
-    {
-        return [
-            'default' => 'Default',
-            'media'   => 'Default with pictures',
-        ];
     }
 
     protected function loadGroup()

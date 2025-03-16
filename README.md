@@ -35,7 +35,7 @@ php artisan winter:up
 
 ## Requirements
 
-* [NumenCode Fundamentals Plugin](https://github.com/numencode/wn-fundamentals-plugin) version ^1.0 or higher.
+* [NumenCode Fundamentals Plugin](https://github.com/numencode/wn-fundamentals-plugin) version ^1.1 or higher.
 * [Winter CMS](https://wintercms.com/) 1.2.7 or higher.
 * PHP version 8.0 or higher.
 
@@ -46,6 +46,22 @@ php artisan winter:up
 This plugin provides an intuitive interface to create and manage a variety of widgets, enabling end users
 to customize their websites with ease. With multilingual support via the `Winter.Translate` plugin,
 it ensures global usability.
+
+### Component Rendering System
+
+All widget components in this plugin leverage the `ComponentRenderer` trait from the **NumenCode.Fundamentals** plugin.
+This provides several key benefits:
+
+- **Automatic Alias Resolution**: Each component’s alias is automatically set based on its class name.
+- **Customizable Rendering**: Users can override default component templates via theme partials.
+- **Layout Selection**: Components support multiple layout options, allowing greater flexibility in presentation.
+
+To override a component’s layout, create a folder inside your theme's partials directory matching the component's alias
+(e.g., `/themes/custom/partials/mycomponent`) and add layout files like `default.htm`, `special.htm`, etc.
+
+---
+
+## Available Widgets
 
 ### Counters
 

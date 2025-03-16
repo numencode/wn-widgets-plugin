@@ -2,9 +2,12 @@
 
 use Cms\Classes\ComponentBase;
 use NumenCode\Widgets\Models\GalleryGroup;
+use NumenCode\Fundamentals\Traits\ComponentRenderer;
 
 class Gallery extends ComponentBase
 {
+    use ComponentRenderer;
+
     public $gallery;
     public $itemsPerRow;
 
@@ -47,25 +50,9 @@ class Gallery extends ComponentBase
         $this->itemsPerRow = $this->property('items_per_row') ?? 4;
     }
 
-    public function onRender()
-    {
-        if (!$layout = $this->property('layout')) {
-            $layout = 'default';
-        }
-
-        return $this->renderPartial('@' . $layout . '.htm');
-    }
-
     public function getTitleOptions(): array
     {
         return GalleryGroup::lists('title', 'id');
-    }
-
-    public function getLayoutOptions(): array
-    {
-        return [
-            'default' => 'Default',
-        ];
     }
 
     protected function loadGallery()

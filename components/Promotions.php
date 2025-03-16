@@ -2,9 +2,12 @@
 
 use Cms\Classes\ComponentBase;
 use NumenCode\Widgets\Models\PromotionGroup;
+use NumenCode\Fundamentals\Traits\ComponentRenderer;
 
 class Promotions extends ComponentBase
 {
+    use ComponentRenderer;
+
     public $group;
 
     public function componentDetails(): array
@@ -38,25 +41,9 @@ class Promotions extends ComponentBase
         $this->group = $this->loadGroup();
     }
 
-    public function onRender()
-    {
-        if (!$layout = $this->property('layout')) {
-            $layout = 'default';
-        }
-
-        return $this->renderPartial('@' . $layout . '.htm');
-    }
-
     public function getTitleOptions(): array
     {
         return PromotionGroup::lists('title', 'id');
-    }
-
-    public function getLayoutOptions(): array
-    {
-        return [
-            'default' => 'Bootstrap 4',
-        ];
     }
 
     protected function loadGroup()

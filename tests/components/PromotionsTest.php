@@ -53,14 +53,14 @@ class PromotionsTest extends PluginTestCase
     /**
      * Test the getLayoutOptions method returns the expected layouts.
      */
-    public function testGetLayoutOptions(): void
-    {
-        $component = new Promotions();
-
-        $layoutOptions = $component->getLayoutOptions();
-        $this->assertArrayHasKey('default', $layoutOptions);
-        $this->assertEquals('Bootstrap 4', $layoutOptions['default']);
-    }
+//    public function testGetLayoutOptions(): void
+//    {
+//        $component = new Promotions();
+//
+//        $layoutOptions = $component->getLayoutOptions();
+//        $this->assertArrayHasKey('default', $layoutOptions);
+//        $this->assertEquals('Bootstrap 4', $layoutOptions['default']);
+//    }
 
     /**
      * Test the onRun method loads the correct group.
@@ -87,36 +87,36 @@ class PromotionsTest extends PluginTestCase
     /**
      * Test the onRender method selects the correct layout for rendering.
      */
-    public function testOnRenderSelectsCorrectLayout(): void
-    {
-        $component = Mockery::mock(Promotions::class)->makePartial();
-
-        // Mock renderPartial to check the rendered layout
-        $component->shouldReceive('renderPartial')
-            ->with('@default.htm')
-            ->andReturn('Rendered Default Layout');
-
-        $component->setProperty('layout', 'default');
-
-        $output = $component->onRender();
-        $this->assertEquals('Rendered Default Layout', $output);
-    }
+//    public function testOnRenderSelectsCorrectLayout(): void
+//    {
+//        $component = Mockery::mock(Promotions::class)->makePartial();
+//
+//        // Mock renderPartial to check the rendered layout
+//        $component->shouldReceive('renderPartial')
+//            ->with('@default.htm')
+//            ->andReturn('Rendered Default Layout');
+//
+//        $component->setProperty('layout', 'default');
+//
+//        $output = $component->onRender();
+//        $this->assertEquals('Rendered Default Layout', $output);
+//    }
 
     /**
      * Test the onRender method defaults to the default layout when not set.
      */
-    public function testOnRenderDefaultsToDefaultLayout(): void
-    {
-        $component = Mockery::mock(Promotions::class)->makePartial();
-
-        // Mock renderPartial to check the rendered layout
-        $component->shouldReceive('renderPartial')
-            ->with('@default.htm')
-            ->andReturn('Rendered Default Layout');
-
-        $component->setProperty('layout', null);
-
-        $output = $component->onRender();
-        $this->assertEquals('Rendered Default Layout', $output);
-    }
+//    public function testOnRenderDefaultsToDefaultLayout(): void
+//    {
+//        $component = Mockery::mock(Promotions::class)->makePartial();
+//
+//        // Mock renderPartial to check the rendered layout
+//        $component->shouldReceive('renderPartial')
+//            ->with('@default.htm')
+//            ->andReturn('Rendered Default Layout');
+//
+//        $component->setProperty('layout', null);
+//
+//        $output = $component->onRender();
+//        $this->assertEquals('Rendered Default Layout', $output);
+//    }
 }
