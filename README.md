@@ -56,8 +56,24 @@ This provides several key benefits:
 - **Customizable Rendering**: Users can override default component templates via theme partials.
 - **Layout Selection**: Components support multiple layout options, allowing greater flexibility in presentation.
 
-To override a component’s layout, create a folder inside your theme's partials directory matching the component's alias
-(e.g., `/themes/custom/partials/mycomponent`) and add layout files like `default.htm`, `special.htm`, etc.
+#### Overriding a Component’s Layout
+
+To override a component’s layout, follow these steps:
+
+1. Create a folder inside your theme's `partials` directory that matches the component's alias
+   (e.g., `/themes/custom/partials/mycomponent`) and add layout files such as `default.htm`, `special.htm`, etc.
+2. In your custom plugin's `Plugin.php` file, enable layout overrides in the `boot()` method by setting the
+   static property `$overrideLayout` to `true`. Example:
+
+   ```php
+   class Plugin extends PluginBase
+   {
+       public function boot()
+       {
+           \NumenCode\Widgets\Components\Promotions::$overrideLayout = true;
+       }
+   }
+   ```
 
 ---
 
