@@ -1,0 +1,40 @@
+url = "/widgets"
+
+[promotions]
+group = 1
+
+[promotions promotionsSecond]
+group = 1
+
+[features]
+group = 1
+
+[features featuresMedia]
+group = 1
+layout = "@default_with_media"
+
+[features featuresNoGroup]
+
+[highlights]
+group = 1
+
+[gallery]
+group = 1
+items_per_row = 3
+
+[gallery galleryCustom]
+group = 1
+layout = "@custom"
+
+[counters]
+group = 1
+==
+PROMOTIONS[{% component 'promotions' %}]
+PROMOTIONS2[{% component 'promotionsSecond' %}]
+FEATURES[{% component 'features' %}]
+FEATURESMEDIA[{% component 'featuresMedia' %}]
+NOGROUP[{% component 'featuresNoGroup' %}]
+HIGHLIGHTS[{% component 'highlights' %}]
+GALLERY[{% component 'gallery' %}]
+CUSTOM[{% component 'galleryCustom' %}]
+COUNTERS[{% component 'counters' %}]

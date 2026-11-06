@@ -2,15 +2,21 @@
 #  Form Behavior Config
 # ===================================
 
-name: 'numencode.widgets::lang.promotions.name'
+name: 'numencode.widgets::lang.promotions.record'
 form: $/numencode/widgets/models/promotiongroup/fields.yaml
 modelClass: NumenCode\Widgets\Models\PromotionGroup
 defaultRedirect: numencode/widgets/promotions
+formLayout: sidebar
+
 create:
     title: 'numencode.widgets::lang.promotions.create'
     redirect: 'numencode/widgets/promotions/update/:id'
     redirectClose: numencode/widgets/promotions
+
 update:
     title: 'numencode.widgets::lang.promotions.update'
     redirect: numencode/widgets/promotions
     redirectClose: numencode/widgets/promotions
+
+preview:
+    title: 'numencode.widgets::lang.promotions.preview'

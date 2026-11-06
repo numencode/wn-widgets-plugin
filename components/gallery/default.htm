@@ -1,37 +1,46 @@
-{% set gallery = __SELF__.gallery %}
-{% set itemsPerRow = __SELF__.itemsPerRow|default(4) %}
-{% set colClass = 'col-lg-' ~ (12 // itemsPerRow) ~ ' col-sm-6' %}
+{#
+    Gallery: a Bootstrap 5 grid of pictures. Each picture links to the full-size image with
+    data-gallery="<component alias>", so a lightbox script added by the theme can group them.
+    Override it in themes/<theme>/partials/gallery/default.htm or add more layouts there.
+#}
+{% set group = __SELF__.group %}
+{% set columnClass = 'col-12' ~ (__SELF__.itemsPerRow > 1 ? ' col-sm-6') ~ ' col-lg-' ~ __SELF__.columnWidth() %}
 
-<h2>{{ gallery.title }}</h2>
+<section class="widget-gallery">
+    {% if group.title %}
+        <h2 class="mb-4">{{ group.title }}</h2>
+    {% endif %}
+    {% if group.content %}
+        <div class="mb-4">{{ group.content|raw }}</div>
+    {% endif %}
 
-{% if gallery.content %}
-    <p>{{ gallery.content|raw }}</p>
-{% endif %}
-
-<div class="row">
-    {% for item in gallery.items_list %}
-        <div class="{{ colClass }} gallery-item">
-            <div class="card h-100">
-                {% if item.picture %}
-                    <a href="{{ item.picture|media }}" data-lightbox="gallery">
-                        <img class="card-img-top" src="{{ item.picture|media|resize('700x400.crop') }}" alt="{{ item.title }}">
+    <div class="row g-3">
+        {% for item in group.items %}
+            {% if item.picture %}
+            <div class="{{ columnClass }}">
+                <figure class="figure w-100 mb-0">
+                    <a href="{{ item.picture|media }}" data-gallery="{{ __SELF__.alias }}"{% if item.title %} data-title="{{ item.title }}"{% endif %}>
+                        <img class="figure-img img-fluid rounded w-100 mb-1" src="{{ item.picture|media|resize(700, 400, {mode: 'crop'}) }}" alt="{{ item.title }}" loading="lazy">
                     </a>
-                {% endif %}
-                <div class="card-body text-center">
-                    {% if item.title %}
-                        <h5 class="card-title">{{ item.title }}</h5>
+                    {% if item.title or item.subtitle %}
+                        <figcaption class="figure-caption text-center">
+                            {% if item.title %}
+                                <span class="d-block fw-semibold text-body">{{ item.title }}</span>
+                            {% endif %}
+                            {% if item.subtitle %}
+                                <span class="d-block">{{ item.subtitle }}</span>
+                            {% endif %}
+                        </figcaption>
                     {% endif %}
-                    {% if item.subtitle %}
-                        <p class="card-subtitle text-muted">{{ item.subtitle }}</p>
-                    {% endif %}
-                </div>
+                </figure>
             </div>
-        </div>
-    {% endfor %}
-</div>
-
-{% if gallery.link and gallery.link_title %}
-    <div class="text-center mt-3">
-        <a href="{{ gallery.link }}" class="btn btn-primary">{{ gallery.link_title }}</a>
+            {% endif %}
+        {% endfor %}
     </div>
-{% endif %}
+
+    {% if group.link %}
+        <div class="text-center mt-4">
+            <a class="btn btn-outline-primary" href="{{ group.link }}">{{ group.link_title ?: group.title ?: group.link }}</a>
+        </div>
+    {% endif %}
+</section>

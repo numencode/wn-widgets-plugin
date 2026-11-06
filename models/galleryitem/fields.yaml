@@ -4,31 +4,24 @@
 
 fields:
     id:
-        span: auto
-        cssClass: hidden
         type: number
-    section:
-        label: 'numencode.widgets::lang.field.section'
-        span: full
-        type: section
-        containerAttributes:
-            data-set-from: '[title]'
+        cssClass: hidden
     picture:
-        label: 'numencode.widgets::lang.field.picture'
-        mode: image
-        span: right
+        label: 'numencode.fundamentals::lang.field.picture'
         type: mediafinder
+        mode: image
+        span: left
     title:
-        label: 'numencode.widgets::lang.field.title'
-        span: left
+        label: 'numencode.fundamentals::lang.field.title'
         type: text
+        span: right
     subtitle:
-        label: 'numencode.widgets::lang.field.subtitle'
-        span: left
+        label: 'numencode.fundamentals::lang.field.subtitle'
         type: text
+        span: right
     is_published:
-        label: 'numencode.widgets::lang.field.is_published'
-        comment: 'numencode.widgets::lang.field.is_published_comment'
-        span: left
+        label: 'numencode.fundamentals::lang.field.is_published'
+        comment: 'numencode.fundamentals::lang.field.is_published_comment'
         type: switch
         default: true
+        span: right

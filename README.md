@@ -1,142 +1,208 @@
 # Widgets Plugin
 
-The **NumenCode Widgets** plugin for Winter CMS provides a flexible and easy-to-use solution for managing reusable
-widgets in Winter CMS. This plugin simplifies adding dynamic, visually engaging components to your themes and
-templates, enhancing the overall user experience.
+The **Widgets Plugin** adds reusable content widgets to Winter CMS: promotions, features, highlights, galleries and
+counters. Editors manage them in the backend as groups of items, and CMS components display a group on any page,
+layout or static page, with layouts that themes can override.
 
 [![Version](https://img.shields.io/github/v/release/numencode/wn-widgets-plugin?style=flat-square&color=0099FF)](https://github.com/numencode/wn-widgets-plugin/releases)
 [![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/numencode/wn-widgets-plugin?style=flat-square&color=0099FF)](https://packagist.org/packages/numencode/wn-widgets-plugin)
-[![Checks](https://img.shields.io/github/check-runs/numencode/wn-widgets-plugin/main?style=flat-square)](https://github.com/numencode/wn-widgets-plugin/actions)
 [![Tests](https://img.shields.io/github/actions/workflow/status/numencode/wn-widgets-plugin/tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/numencode/wn-widgets-plugin/actions)
 [![License](https://img.shields.io/github/license/numencode/wn-widgets-plugin?label=open%20source&style=flat-square&color=0099FF)](https://github.com/numencode/wn-widgets-plugin/blob/main/LICENSE.md)
 
 ---
 
-## Target Audience
+## Features
 
-The target audience for this plugin includes developers and designers who want to enhance their Winter CMS projects
-by incorporating reusable, visually appealing widgets. The provided widgets, such as counters, promotions, features,
-highlights, and galleries, are commonly used in modern web design and are often found in templates and themes
-available on various marketplaces. This plugin bridges the gap between static designs and dynamic functionality.
+- **Five widget types**, each with its own backend page, permission and component:
 
-## Installation
+  | Widget | Items | Default layout |
+  |---|---|---|
+  | **Promotions** | title, subtitle, content, picture, link | carousel |
+  | **Features** | title, subtitle, content, picture, link | cards (with or without pictures) |
+  | **Highlights** | title, subtitle, content, picture, link | text and picture side by side |
+  | **Gallery** | picture, title, subtitle | picture grid, 1–12 per row |
+  | **Counters** | value, suffix, title, icon | row of numbers |
 
-This plugin is available for installation via [Composer](http://getcomposer.org/).
-
-```bash
-composer require numencode/wn-widgets-plugin
-```
-
-After installing the plugin you will need to run the migrations.
-
-```bash
-php artisan winter:up
-```
+- **Groups of items** – a group has a title, an intro text and a link; its items are edited inline, can be reordered
+  and unpublished.
+- **Selectable layouts** – every component has a layout dropdown; themes can override the default layout and add their
+  own.
+- **Bootstrap 5 starter templates**, meant to be overridden in the theme.
+- **Static pages** – all components are available as Winter.Pages snippets.
+- **Translations** – groups and items are translatable with [Winter.Translate](https://github.com/wintercms/wn-translate-plugin).
+- **Publishing** – unpublished groups and items are hidden on the website; logged-in backend users still see them.
+- **Permissions** – one permission per widget type, plus finer control per user group with NumenCode.Fundamentals
+  `CmsPermissions`.
+- English and Slovenian backend translations.
 
 ## Requirements
 
-* [NumenCode Fundamentals Plugin](https://github.com/numencode/wn-fundamentals-plugin) version ^1.1 or higher.
-* [Winter CMS](https://wintercms.com/) 1.2.7 or higher.
-* PHP version 8.0 or higher.
+- PHP 8.2 or newer
+- [Winter CMS](https://wintercms.com) 1.2 (tested with 1.2.15)
+- [NumenCode.Fundamentals](https://github.com/numencode/wn-fundamentals-plugin) 2.1 or newer (installed automatically)
+- Optional: [Winter.Translate](https://github.com/wintercms/wn-translate-plugin) for translations,
+  [Winter.Pages](https://github.com/wintercms/wn-pages-plugin) for static page snippets
 
----
+## Installation
 
-## Features Overview
+```bash
+composer require numencode/wn-widgets-plugin
+php artisan winter:up
+```
 
-This plugin provides an intuitive interface to create and manage a variety of widgets, enabling end users
-to customize their websites with ease. With multilingual support via the `Winter.Translate` plugin,
-it ensures global usability.
+## Managing widgets
 
-### Component Rendering System
+The backend menu **Widgets** has a page for every widget type. Each record is a **group** (e.g. "Homepage slider" or
+"Office gallery") with:
 
-All widget components in this plugin leverage the `ComponentRenderer` trait from the **NumenCode.Fundamentals** plugin.
-This provides several key benefits:
+- a title, an intro text and an optional link (tab "Description"),
+- its **items**, edited inline in the "Items" tab: drag to reorder, collapse or expand them one by one or all at
+  once,
+- a "Published" switch in the sidebar.
 
-- **Automatic Alias Resolution**: Each component’s alias is automatically set based on its class name.
-- **Customizable Rendering**: Users can override default component templates via theme partials.
-- **Layout Selection**: Components support multiple layout options, allowing greater flexibility in presentation.
+Each widget type has its own permission (Settings → Administrators → Permissions → Widgets):
+`numencode.widgets.manage_promotions`, `manage_features`, `manage_highlights`, `manage_gallery` and
+`manage_counters`.
 
-#### Overriding a Component’s Layout
+## Components
 
-To override a component’s layout, follow these steps:
+| Component | Properties |
+|---|---|
+| `promotions` | `group`, `layout` |
+| `features` | `group`, `layout` |
+| `highlights` | `group`, `layout` |
+| `gallery` | `group`, `layout`, `items_per_row` (1, 2, 3, 4, 6 or 12; default 4) |
+| `counters` | `group`, `layout` |
 
-1. Create a folder inside your theme's `partials` directory that matches the component's alias
-   (e.g., `/themes/custom/partials/mycomponent`) and add layout files such as `default.htm`, `special.htm`, etc.
-2. In your custom plugin's `Plugin.php` file, enable layout overrides in the `boot()` method by setting the
-   static property `$overrideLayout` to `true`. Example:
+- **`group`** – ID of the displayed group (a dropdown of all groups in the CMS editor).
+- **`layout`** – the layout partial, `@default` by default (see [Layouts](#layouts)).
 
-   ```php
-   class Plugin extends PluginBase
-   {
-       public function boot()
-       {
-           \NumenCode\Widgets\Components\Promotions::$overrideLayout = true;
-       }
-   }
-   ```
+```twig
+title = "Home"
+url = "/"
 
----
+[promotions homeSlider]
+group = 1
 
-## Available Widgets
+[gallery]
+group = 2
+layout = "@default"
+items_per_row = 3
+==
+{% component 'homeSlider' %}
+{% component 'gallery' %}
+```
 
-### Counters
+Nothing is rendered when no group is selected, or when the group doesn't exist or is unpublished, so templates
+don't need checks for an empty group.
 
-Showcase statistics or numeric information on your website using dynamic and engaging animated counters.
-Enter the desired number, provide explanatory text, and optionally include an icon class for added flair.
-Counters can be easily configured through component properties.
+### Template variables
 
-### Promotions
+| Variable | Description |
+|---|---|
+| `__SELF__.group` | The group: `title`, `content`, `link`, `link_title` |
+| `__SELF__.group.items` | Its published items, in their backend order |
+| `__SELF__.itemsPerRow` | Gallery only: the number of items per row |
+| `__SELF__.columnWidth()` | Gallery only: the width of one item in a 12-column grid (e.g. `3` for 4 per row) |
+| `__SELF__.alias` | The component alias, useful for unique HTML IDs |
 
-Create attention-grabbing promotional content such as sliders and carousels that seamlessly integrate
-into your website's aesthetic. Perfect for highlighting creative content within a compact space.
-Promotions are managed via the `Promotions` tab in the Widgets plugin.
+Item fields: `title`, `subtitle`, `content`, `picture`, `link`, `link_title` (gallery items: `title`, `subtitle`,
+`picture`; counters: `title`, `icon`, `value`, `suffix`). `picture` is a media library path, so use
+`{{ item.picture|media }}` or `{{ item.picture|media|resize(700, 400, {mode: 'crop'}) }}`.
 
-### Features
+## Layouts
 
-Display multiple items in an organized list or an eye-catching slider/carousel format. This is ideal
-for showcasing services, products, or other grouped content. Manage features directly from the `Features` tab.
+The default layouts use [Bootstrap 5](https://getbootstrap.com) markup and are starting points. A theme can override
+them and add new ones in `themes/<theme>/partials/<component>/`, where `<component>` is the lowercase class name
+(`promotions`, `features`, `highlights`, `gallery`, `counters`), regardless of the alias used on the page:
 
-### Highlights
+```text
+themes/mytheme/partials/
+├── promotions/
+│   ├── default.htm      # replaces the plugin's default layout
+│   └── slider.htm       # an extra layout, shown as "Slider" in the layout dropdown
+└── gallery/
+    └── masonry.htm
+```
 
-Create visually striking content cards with accompanying descriptions to emphasize key aspects of your website.
-Highlights are perfect for promoting unique selling points or key features and are managed through the `Highlights` tab.
+```twig
+{# themes/mytheme/partials/gallery/masonry.htm #}
+<div class="masonry">
+    {% for item in __SELF__.group.items %}
+        <img src="{{ item.picture|media|resize(600) }}" alt="{{ item.title }}">
+    {% endfor %}
+</div>
+```
 
-### Gallery
+Select the layout in the component's `layout` property (e.g. `layout = "@masonry"`). Partials whose name starts with
+`_` are not listed, so they can be used for shared snippets. Layout selection uses the NumenCode.Fundamentals
+`ComponentRenderer`; to always render the default layout of a component, switch it off in a plugin's `boot()`:
 
-Easily create and manage multiple image galleries with a flexible and intuitive interface. Upload, reorder,
-and showcase images using the dedicated Gallery component, which seamlessly integrates into any page.
-Manage galleries via the `Gallery` tab in the Widgets plugin.
+```php
+\NumenCode\Widgets\Components\Gallery::$overrideLayout = false;
+```
 
----
+Notes on the default layouts:
+
+- **Promotions** – a Bootstrap carousel with the ID `promotions-<alias>`, so several carousels can be on one page.
+- **Gallery** – each picture links to the full-size image with `data-gallery="<alias>"` (and `data-title`), so a
+  lightbox script in your theme (e.g. GLightbox or Fancybox) can open them as one gallery.
+- **Counters** – the number is printed as text, and also in `data-to` for a counting animation script.
+
+## Restricting actions per user group
+
+The Widgets backend pages respect NumenCode.Fundamentals `CmsPermissions`. For example, to stop the "publishers"
+user group from deleting promotions, in your plugin's `boot()`:
+
+```php
+use NumenCode\Fundamentals\Classes\CmsPermissions;
+use NumenCode\Widgets\Controllers\Promotions;
+
+CmsPermissions::revokeDelete('publishers', Promotions::class);
+```
+
+Revoked actions are hidden in the toolbars and blocked on the server. Without the update permission, a record opens
+read-only.
+
+## Extending
+
+The models, controllers and components can be extended like any Winter class. To change a widget type's form, use
+NumenCode.Fundamentals `ConfigOverride` (each widget type has its own YAML files):
+
+```php
+use NumenCode\Fundamentals\Bootstrap\ConfigOverride;
+use NumenCode\Widgets\Models\GalleryItem;
+
+ConfigOverride::extendFields(GalleryItem::class, function (array $config) {
+    $config['fields']['subtitle']['label'] = 'Category';
+
+    return $config;
+});
+```
+
+## Upgrading from 1.x
+
+Version 2.0 contains breaking changes; see [Upgrading from 1.x](CHANGELOG.md#upgrading-from-1x) in the changelog.
 
 ## Changelog
 
 All notable changes are documented in the [CHANGELOG](CHANGELOG.md).
 
----
-
 ## Contributing
 
 Please refer to the [CONTRIBUTING](CONTRIBUTING.md) guide for details on contributing to this project.
 
----
-
 ## Security
 
-If you identify any security issues, email info@numencode.com rather than using the issue tracker.
-
----
+If you discover a security issue, please email <info@numencode.com> instead of using the issue tracker.
 
 ## Author
 
 The **NumenCode.Widgets** plugin is created and maintained by [Blaz Orazem](https://orazem.si/).
+More NumenCode plugins: [numencode.com](https://www.numencode.com).
 
-For inquiries, contact: info@numencode.com
-
----
+For inquiries, contact: <info@numencode.com>
 
 ## License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-[![License](https://img.shields.io/github/license/numencode/wn-widgets-plugin?style=flat-square&color=0099FF)](https://github.com/numencode/wn-widgets-plugin/blob/main/LICENSE.md)

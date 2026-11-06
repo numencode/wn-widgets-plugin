@@ -1,19 +1,45 @@
+{#
+    Features: Bootstrap 5 cards. Override it in themes/<theme>/partials/features/default.htm
+    or add more layouts there.
+#}
 {% set group = __SELF__.group %}
 
-<h1 class="my-4">{{ group.title }}</h1>
+<section class="widget-features">
+    {% if group.title %}
+        <h2 class="mb-4">{{ group.title }}</h2>
+    {% endif %}
+    {% if group.content %}
+        <div class="mb-4">{{ group.content|raw }}</div>
+    {% endif %}
 
-<div class="row">
-    {% for item in group.items %}
-        <div class="col-lg-4 mb-4 highlight-item-{{ loop.index0 }}">
-            <div class="card h-100">
-                <h4 class="card-header">{{ item.title }}</h4>
-                <div class="card-body">
-                    <p class="card-text">{{ item.content|striptags }}</p>
-                </div>
-                <div class="card-footer">
-                    <a class="btn btn-primary" href="{{ item.link }}">{{ item.link_title }}</a>
+    <div class="row g-4">
+        {% for item in group.items %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        {% if item.title %}
+                            <h3 class="card-title h5">{{ item.title }}</h3>
+                        {% endif %}
+                        {% if item.subtitle %}
+                            <p class="card-subtitle mb-2 text-body-secondary">{{ item.subtitle }}</p>
+                        {% endif %}
+                        {% if item.content %}
+                            <div class="card-text">{{ item.content|raw }}</div>
+                        {% endif %}
+                    </div>
+                    {% if item.link %}
+                        <div class="card-footer bg-transparent border-0 pb-3">
+                            <a class="btn btn-primary" href="{{ item.link }}">{{ item.link_title ?: item.title ?: item.link }}</a>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
+        {% endfor %}
+    </div>
+
+    {% if group.link %}
+        <div class="text-center mt-4">
+            <a class="btn btn-outline-primary" href="{{ group.link }}">{{ group.link_title ?: group.title ?: group.link }}</a>
         </div>
-    {% endfor %}
-</div>
+    {% endif %}
+</section>

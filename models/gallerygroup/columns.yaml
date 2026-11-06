@@ -4,40 +4,39 @@
 
 columns:
     title:
-        label: 'numencode.widgets::lang.field.title'
+        label: 'numencode.fundamentals::lang.field.title'
         type: text
         searchable: true
         sortable: true
     content:
-        label: 'numencode.widgets::lang.field.content'
+        label: 'numencode.fundamentals::lang.field.content'
         type: text
         searchable: true
         sortable: true
         invisible: true
     link:
-        label: 'numencode.widgets::lang.field.link'
+        label: 'numencode.fundamentals::lang.field.link'
         type: text
         searchable: true
         sortable: true
         invisible: true
     link_title:
-        label: 'numencode.widgets::lang.field.link_title'
+        label: 'numencode.fundamentals::lang.field.link_title'
         type: text
         searchable: true
         sortable: true
         invisible: true
-    item_count:
-        label: 'numencode.widgets::lang.item.count'
+    items:
+        label: 'numencode.fundamentals::lang.item.count'
         type: number
-        searchable: false
+        relation: items
+        useRelationCount: true
         sortable: true
     is_published:
-        label: 'numencode.widgets::lang.field.is_published'
+        label: 'numencode.fundamentals::lang.field.is_published'
         type: switch
-        searchable: true
         sortable: true
     created_at:
-        label: 'numencode.widgets::lang.timestamp.created_at'
+        label: 'numencode.fundamentals::lang.timestamp.created_at'
         type: datetime
-        searchable: true
         sortable: true

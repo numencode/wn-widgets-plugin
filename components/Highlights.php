@@ -1,53 +1,18 @@
-<?php namespace NumenCode\Widgets\Components;
+<?php
 
-use Cms\Classes\ComponentBase;
+declare(strict_types=1);
+
+namespace NumenCode\Widgets\Components;
+
+use NumenCode\Widgets\Classes\GroupComponent;
 use NumenCode\Widgets\Models\HighlightGroup;
-use NumenCode\Fundamentals\Traits\ComponentRenderer;
 
-class Highlights extends ComponentBase
+/**
+ * Displays a highlight group.
+ */
+class Highlights extends GroupComponent
 {
-    use ComponentRenderer;
+    public static bool $overrideLayout = true;
 
-    public $group;
-
-    public function componentDetails(): array
-    {
-        return [
-            'name'        => 'numencode.widgets::lang.highlights.name',
-            'description' => 'numencode.widgets::lang.highlights.description',
-        ];
-    }
-
-    public function defineProperties(): array
-    {
-        return [
-            'title' => [
-                'title'       => 'numencode.widgets::lang.highlights.group_title',
-                'description' => 'numencode.widgets::lang.highlights.group_description',
-                'type'        => 'dropdown',
-                'default'     => 'default',
-            ],
-            'layout' => [
-                'title'       => 'numencode.widgets::lang.highlights.layout_title',
-                'description' => 'numencode.widgets::lang.highlights.layout_description',
-                'type'        => 'dropdown',
-                'default'     => 'default',
-            ],
-        ];
-    }
-
-    public function onRun()
-    {
-        $this->group = $this->loadGroup();
-    }
-
-    public function getTitleOptions(): array
-    {
-        return HighlightGroup::lists('title', 'id');
-    }
-
-    protected function loadGroup()
-    {
-        return HighlightGroup::find($this->property('title'));
-    }
+    protected string $groupModel = HighlightGroup::class;
 }

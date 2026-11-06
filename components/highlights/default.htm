@@ -1,26 +1,44 @@
+{#
+    Highlights: text and picture side by side, alternating. Override it in
+    themes/<theme>/partials/highlights/default.htm or add more layouts there.
+#}
 {% set group = __SELF__.group %}
 
-{% for item in group.items %}
-    <div class="row">
-        <div class="col-lg-6">
-            <h2>{{ item.title }}</h2>
-            {{ item.content|raw }}
-        </div>
-        <div class="col-lg-6">
+<section class="widget-highlights">
+    {% if group.title %}
+        <h2 class="mb-4">{{ group.title }}</h2>
+    {% endif %}
+    {% if group.content %}
+        <div class="mb-4">{{ group.content|raw }}</div>
+    {% endif %}
+
+    {% for item in group.items %}
+        <div class="row align-items-center g-4 mb-5{{ loop.index is even ? ' flex-lg-row-reverse' }}">
+            <div class="{{ item.picture ? 'col-lg-6' : 'col-12' }}">
+                {% if item.title %}
+                    <h3>{{ item.title }}</h3>
+                {% endif %}
+                {% if item.subtitle %}
+                    <p class="lead text-body-secondary">{{ item.subtitle }}</p>
+                {% endif %}
+                {% if item.content %}
+                    <div>{{ item.content|raw }}</div>
+                {% endif %}
+                {% if item.link %}
+                    <a class="btn btn-secondary" href="{{ item.link }}">{{ item.link_title ?: item.title ?: item.link }}</a>
+                {% endif %}
+            </div>
             {% if item.picture %}
-                <img class="img-fluid rounded fr-fic fr-dii" src="{{ item.picture|media|resize('700x400.crop') }}" alt="{{ item.title }}">
+                <div class="col-lg-6">
+                    <img class="img-fluid rounded" src="{{ item.picture|media|resize(700, 400, {mode: 'crop'}) }}" alt="{{ item.title }}" loading="lazy">
+                </div>
             {% endif %}
         </div>
-    </div>
+    {% endfor %}
 
-    <hr>
-
-    <div class="row mb-4">
-        <div class="col-md-8">
-            <p>{{ item.subtitle }}</p>
+    {% if group.link %}
+        <div class="text-center">
+            <a class="btn btn-outline-primary" href="{{ group.link }}">{{ group.link_title ?: group.title ?: group.link }}</a>
         </div>
-        <div class="col-md-4">
-            <a class="btn btn-lg btn-secondary btn-block" href="{{ item.link }}">{{ item.link_title }}</a>
-        </div>
-    </div>
-{% endfor %}
+    {% endif %}
+</section>

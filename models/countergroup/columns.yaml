@@ -1,0 +1,42 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    title:
+        label: 'numencode.fundamentals::lang.field.title'
+        type: text
+        searchable: true
+        sortable: true
+    content:
+        label: 'numencode.fundamentals::lang.field.content'
+        type: text
+        searchable: true
+        sortable: true
+        invisible: true
+    link:
+        label: 'numencode.fundamentals::lang.field.link'
+        type: text
+        searchable: true
+        sortable: true
+        invisible: true
+    link_title:
+        label: 'numencode.fundamentals::lang.field.link_title'
+        type: text
+        searchable: true
+        sortable: true
+        invisible: true
+    items:
+        label: 'numencode.fundamentals::lang.item.count'
+        type: number
+        relation: items
+        useRelationCount: true
+        sortable: true
+    is_published:
+        label: 'numencode.fundamentals::lang.field.is_published'
+        type: switch
+        sortable: true
+    created_at:
+        label: 'numencode.fundamentals::lang.timestamp.created_at'
+        type: datetime
+        sortable: true

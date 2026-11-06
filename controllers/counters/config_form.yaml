@@ -1,0 +1,22 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: 'numencode.widgets::lang.counters.record'
+form: $/numencode/widgets/models/countergroup/fields.yaml
+modelClass: NumenCode\Widgets\Models\CounterGroup
+defaultRedirect: numencode/widgets/counters
+formLayout: sidebar
+
+create:
+    title: 'numencode.widgets::lang.counters.create'
+    redirect: 'numencode/widgets/counters/update/:id'
+    redirectClose: numencode/widgets/counters
+
+update:
+    title: 'numencode.widgets::lang.counters.update'
+    redirect: numencode/widgets/counters
+    redirectClose: numencode/widgets/counters
+
+preview:
+    title: 'numencode.widgets::lang.counters.preview'

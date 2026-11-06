@@ -1,0 +1,34 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        type: number
+        cssClass: hidden
+    title:
+        label: 'numencode.fundamentals::lang.field.title'
+        type: text
+        span: left
+    icon:
+        label: 'numencode.widgets::lang.counters.icon'
+        comment: 'numencode.widgets::lang.counters.icon_comment'
+        type: text
+        span: right
+    value:
+        label: 'numencode.widgets::lang.counters.value'
+        type: number
+        step: any
+        required: true
+        span: left
+    suffix:
+        label: 'numencode.widgets::lang.counters.suffix'
+        comment: 'numencode.widgets::lang.counters.suffix_comment'
+        type: text
+        span: right
+    is_published:
+        label: 'numencode.fundamentals::lang.field.is_published'
+        comment: 'numencode.fundamentals::lang.field.is_published_comment'
+        type: switch
+        default: true
+        span: left

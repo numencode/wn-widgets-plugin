@@ -1,50 +1,37 @@
-{% set counters = __SELF__.counters %}
+{#
+    Counters: numbers with a suffix, a title and an icon. The number is printed as text, so it
+    shows without JavaScript; data-to holds the value for a theme's counting animation.
+    Override it in themes/<theme>/partials/counters/default.htm or add more layouts there.
+#}
+{% set group = __SELF__.group %}
 
-<div class="container">
-    <div class="row text-center">
-        {% if counters.first.value %}
-            <div class="col">
-                <div class="counter">
-                    {% if counters.first.icon %}
-                        <i class="{{ counters.first.icon }}"></i>
-                    {% endif %}
-                    <h2 class="timer count-title count-number" data-to="{{ counters.first.value }}"></h2>
-                    <p class="count-text">{{ counters.first.title }}</p>
-                </div>
+<section class="widget-counters">
+    {% if group.title %}
+        <h2 class="mb-4 text-center">{{ group.title }}</h2>
+    {% endif %}
+    {% if group.content %}
+        <div class="mb-4 text-center">{{ group.content|raw }}</div>
+    {% endif %}
+
+    <div class="row g-4 text-center">
+        {% for item in group.items %}
+            <div class="col-6 col-md">
+                {% if item.icon %}
+                    <i class="{{ item.icon }} fs-1 d-block mb-2" aria-hidden="true"></i>
+                {% endif %}
+                <p class="display-5 fw-bold mb-1">
+                    <span class="counter-value" data-to="{{ item.value }}">{{ item.value }}</span>{{ item.suffix }}
+                </p>
+                {% if item.title %}
+                    <p class="text-body-secondary mb-0">{{ item.title }}</p>
+                {% endif %}
             </div>
-        {% endif %}
-        {% if counters.second.value %}
-            <div class="col">
-                <div class="counter">
-                    {% if counters.second.icon %}
-                        <i class="{{ counters.second.icon }}"></i>
-                    {% endif %}
-                    <h2 class="timer count-title count-number" data-to="{{ counters.second.value }}"></h2>
-                    <p class="count-text">{{ counters.second.title }}</p>
-                </div>
-            </div>
-        {% endif %}
-        {% if counters.third.value %}
-            <div class="col">
-                <div class="counter">
-                    {% if counters.third.icon %}
-                        <i class="{{ counters.third.icon }}"></i>
-                    {% endif %}
-                    <h2 class="timer count-title count-number" data-to="{{ counters.third.value }}"></h2>
-                    <p class="count-text">{{ counters.third.title }}</p>
-                </div>
-            </div>
-        {% endif %}
-        {% if counters.fourth.value %}
-            <div class="col">
-                <div class="counter">
-                    {% if counters.fourth.icon %}
-                        <i class="{{ counters.fourth.icon }}"></i>
-                    {% endif %}
-                    <h2 class="timer count-title count-number" data-to="{{ counters.fourth.value }}"></h2>
-                    <p class="count-text">{{ counters.fourth.title }}</p>
-                </div>
-            </div>
-        {% endif %}
+        {% endfor %}
     </div>
-</div>
+
+    {% if group.link %}
+        <div class="text-center mt-4">
+            <a class="btn btn-outline-primary" href="{{ group.link }}">{{ group.link_title ?: group.title ?: group.link }}</a>
+        </div>
+    {% endif %}
+</section>

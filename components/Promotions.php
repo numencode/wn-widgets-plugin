@@ -1,53 +1,18 @@
-<?php namespace NumenCode\Widgets\Components;
+<?php
 
-use Cms\Classes\ComponentBase;
+declare(strict_types=1);
+
+namespace NumenCode\Widgets\Components;
+
+use NumenCode\Widgets\Classes\GroupComponent;
 use NumenCode\Widgets\Models\PromotionGroup;
-use NumenCode\Fundamentals\Traits\ComponentRenderer;
 
-class Promotions extends ComponentBase
+/**
+ * Displays a promotion group.
+ */
+class Promotions extends GroupComponent
 {
-    use ComponentRenderer;
+    public static bool $overrideLayout = true;
 
-    public $group;
-
-    public function componentDetails(): array
-    {
-        return [
-            'name'        => 'numencode.widgets::lang.promotions.name',
-            'description' => 'numencode.widgets::lang.promotions.description',
-        ];
-    }
-
-    public function defineProperties(): array
-    {
-        return [
-            'title' => [
-                'title'       => 'numencode.widgets::lang.promotions.group_title',
-                'description' => 'numencode.widgets::lang.promotions.group_description',
-                'type'        => 'dropdown',
-                'default'     => 'default',
-            ],
-            'layout' => [
-                'title'       => 'numencode.widgets::lang.promotions.layout_title',
-                'description' => 'numencode.widgets::lang.promotions.layout_description',
-                'type'        => 'dropdown',
-                'default'     => 'default',
-            ],
-        ];
-    }
-
-    public function onRun()
-    {
-        $this->group = $this->loadGroup();
-    }
-
-    public function getTitleOptions(): array
-    {
-        return PromotionGroup::lists('title', 'id');
-    }
-
-    protected function loadGroup()
-    {
-        return PromotionGroup::find($this->property('title'));
-    }
+    protected string $groupModel = PromotionGroup::class;
 }

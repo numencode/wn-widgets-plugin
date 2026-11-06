@@ -1,0 +1,47 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: 'numencode.fundamentals::lang.field.title'
+        span: full
+        type: text
+        required: true
+
+tabs:
+    fields:
+        items_list:
+            tab: 'numencode.fundamentals::lang.item.items'
+            type: relationrepeater
+            form: $/numencode/widgets/models/counteritem/fields.yaml
+            prompt: 'numencode.fundamentals::lang.item.add'
+            titleFrom: title
+            style: collapsed
+            showToggleAll: true
+            span: full
+        content:
+            tab: 'numencode.fundamentals::lang.field.description'
+            label: 'numencode.fundamentals::lang.field.content'
+            type: richeditor
+            size: giant
+            span: full
+        link:
+            tab: 'numencode.fundamentals::lang.field.description'
+            label: 'numencode.fundamentals::lang.field.link'
+            type: text
+            span: left
+        link_title:
+            tab: 'numencode.fundamentals::lang.field.description'
+            label: 'numencode.fundamentals::lang.field.link_title'
+            type: text
+            span: right
+
+secondaryTabs:
+    fields:
+        is_published:
+            label: 'numencode.fundamentals::lang.field.is_published'
+            comment: 'numencode.fundamentals::lang.field.is_published_comment'
+            type: switch
+            default: true
+            span: full

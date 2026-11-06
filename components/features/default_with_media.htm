@@ -1,23 +1,55 @@
+{#
+    Features with pictures: Bootstrap 5 cards with an image on top.
+#}
 {% set group = __SELF__.group %}
 
-<h2>{{ group.title }}</h2>
+<section class="widget-features">
+    {% if group.title %}
+        <h2 class="mb-4">{{ group.title }}</h2>
+    {% endif %}
+    {% if group.content %}
+        <div class="mb-4">{{ group.content|raw }}</div>
+    {% endif %}
 
-<div class="row">
-    {% for item in group.items %}
-        <div class="col-lg-4 col-sm-6 portfolio-item portfolio-item-{{ loop.index0 }}">
-            <div class="card h-100">
-                {% if item.picture %}
-                    <a href="{{ item.link }}">
-                        <img class="card-img-top fr-fic fr-dii" src="{{ item.picture|media|resize('700x400.crop') }}" alt="{{ item.link_title }}">
-                    </a>
-                {% endif %}
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="{{ item.link }}">{{ item.title }}</a>
-                    </h4>
-                    <p class="card-text">{{ item.content|striptags }}</p>
+    <div class="row g-4">
+        {% for item in group.items %}
+            <div class="col-sm-6 col-lg-4">
+                <div class="card h-100">
+                    {% if item.picture %}
+                        {% set image %}
+                            <img class="card-img-top" src="{{ item.picture|media|resize(700, 400, {mode: 'crop'}) }}" alt="{{ item.title }}" loading="lazy">
+                        {% endset %}
+                        {% if item.link %}
+                            <a href="{{ item.link }}">{{ image }}</a>
+                        {% else %}
+                            {{ image }}
+                        {% endif %}
+                    {% endif %}
+                    <div class="card-body">
+                        {% if item.title %}
+                            <h3 class="card-title h5">
+                                {% if item.link %}
+                                    <a href="{{ item.link }}">{{ item.title }}</a>
+                                {% else %}
+                                    {{ item.title }}
+                                {% endif %}
+                            </h3>
+                        {% endif %}
+                        {% if item.subtitle %}
+                            <p class="card-subtitle mb-2 text-body-secondary">{{ item.subtitle }}</p>
+                        {% endif %}
+                        {% if item.content %}
+                            <div class="card-text">{{ item.content|raw }}</div>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
+        {% endfor %}
+    </div>
+
+    {% if group.link %}
+        <div class="text-center mt-4">
+            <a class="btn btn-outline-primary" href="{{ group.link }}">{{ group.link_title ?: group.title ?: group.link }}</a>
         </div>
-    {% endfor %}
-</div>
+    {% endif %}
+</section>

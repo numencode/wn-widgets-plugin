@@ -1,41 +1,15 @@
-<?php namespace NumenCode\Widgets\Models;
+<?php
 
-use Model;
-use Winter\Storm\Database\Traits\Sortable;
-use Winter\Storm\Database\Traits\Validation;
-use NumenCode\Fundamentals\Traits\Publishable;
+declare(strict_types=1);
 
-class FeatureItem extends Model
+namespace NumenCode\Widgets\Models;
+
+/**
+ * An item of a feature group.
+ */
+class FeatureItem extends WidgetItem
 {
-    use Publishable, Sortable, Validation;
-
     public $table = 'numencode_widgets_features_items';
-
-    public $implement = ['@Winter.Translate.Behaviors.TranslatableModel'];
-
-    public $translatable = [
-        'title',
-        'subtitle',
-        'content',
-        'link',
-        'link_title',
-    ];
-
-    public $rules = [];
-
-    protected $fillable = [
-        'title',
-        'subtitle',
-        'content',
-        'link',
-        'link_title',
-        'picture',
-        'is_published',
-    ];
-
-    protected $casts = [
-        'is_published' => 'boolean',
-    ];
 
     public $belongsTo = [
         'group' => [FeatureGroup::class, 'key' => 'group_id'],

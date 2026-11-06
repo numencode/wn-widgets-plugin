@@ -1,9 +1,9 @@
 {
     "name": "numencode/wn-widgets-plugin",
-    "description": "NumenCode Widgets plugin for Winter CMS",
+    "description": "Reusable content widgets for Winter CMS: promotions, features, highlights, galleries and counters, managed in the backend and rendered by components with theme-overridable layouts.",
     "type": "winter-plugin",
     "homepage": "https://www.numencode.com",
-    "keywords": ["winter cms", "winter", "plugin", "laravel", "numencode"],
+    "keywords": ["winter cms", "winter", "plugin", "laravel", "numencode", "widgets", "components", "gallery", "slider", "counters", "translate"],
     "license": "MIT",
     "support": {
         "issues": "https://github.com/numencode/wn-widgets-plugin/issues",
@@ -14,14 +14,32 @@
             "name": "Blaz Orazem",
             "email": "blaz@orazem.si",
             "homepage": "https://orazem.si/",
-            "role": "Founder"
+            "role": "Maintainer"
         }
     ],
     "require": {
-        "php": "^8.0.2",
-        "numencode/wn-fundamentals-plugin": "^1.1"
+        "php": "^8.2",
+        "composer/installers": "^1.0 || ^2.0",
+        "numencode/wn-fundamentals-plugin": "^2.1"
+    },
+    "suggest": {
+        "winter/wn-translate-plugin": "Enables translations of widget groups and their items.",
+        "winter/wn-pages-plugin": "Enables the widgets as snippets in static pages."
+    },
+    "autoload": {
+        "psr-4": {
+            "NumenCode\\Widgets\\": ""
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        },
+        "sort-packages": true
     },
     "extra": {
         "installer-name": "widgets"
-    }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }

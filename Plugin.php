@@ -1,137 +1,113 @@
-<?php namespace NumenCode\Widgets;
+<?php
+
+declare(strict_types=1);
+
+namespace NumenCode\Widgets;
 
 use Backend;
 use BackendAuth;
-use System\Classes\PluginBase;
-use NumenCode\Widgets\Components\Gallery;
 use NumenCode\Widgets\Components\Counters;
 use NumenCode\Widgets\Components\Features;
+use NumenCode\Widgets\Components\Gallery;
 use NumenCode\Widgets\Components\Highlights;
 use NumenCode\Widgets\Components\Promotions;
-use NumenCode\Fundamentals\Classes\CmsPermissions;
-use NumenCode\Widgets\Controllers\Promotions as PromotionsController;
+use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
+    public $require = ['NumenCode.Fundamentals'];
+
+    /**
+     * Widget types with a backend page: code => side menu icon. The code is used in the URL, the
+     * permission (numencode.widgets.manage_{code}) and the lang section.
+     */
+    public const WIDGET_TYPES = [
+        'promotions' => 'icon-picture-o',
+        'features'   => 'icon-eye',
+        'highlights' => 'icon-star',
+        'gallery'    => 'icon-camera-retro',
+        'counters'   => 'icon-tachometer',
+    ];
+
     public function pluginDetails(): array
     {
         return [
             'name'        => 'numencode.widgets::lang.plugin.name',
             'description' => 'numencode.widgets::lang.plugin.description',
             'author'      => 'Blaz Orazem',
-            'icon'        => 'oc-icon-briefcase',
-            'homepage'    => 'https://github.com/numencode/wn-widgets-plugin',
+            'icon'        => 'icon-th-large',
+            'homepage'    => 'https://www.numencode.com',
         ];
-    }
-
-    public function boot()
-    {
-        CmsPermissions::revokeDelete(['owners', 'publishers'], PromotionsController::class);
     }
 
     public function registerComponents(): array
     {
         return [
-            Counters::class   => 'counters',
             Promotions::class => 'promotions',
             Features::class   => 'features',
             Highlights::class => 'highlights',
             Gallery::class    => 'gallery',
+            Counters::class   => 'counters',
         ];
     }
 
     public function registerPageSnippets(): array
     {
-        return [
-            Counters::class   => 'counters',
-            Promotions::class => 'promotions',
-            Features::class   => 'features',
-            Highlights::class => 'highlights',
-            Gallery::class    => 'gallery',
-        ];
+        return $this->registerComponents();
     }
 
     public function registerNavigation(): array
     {
+        $sideMenu = [];
+
+        foreach (self::WIDGET_TYPES as $code => $icon) {
+            $sideMenu[$code] = [
+                'label'       => 'numencode.widgets::lang.' . $code . '.name',
+                'icon'        => $icon,
+                'url'         => Backend::url('numencode/widgets/' . $code),
+                'permissions' => ['numencode.widgets.manage_' . $code],
+            ];
+        }
+
         return [
             'widgets' => [
                 'label'       => 'numencode.widgets::lang.plugin.name',
                 'url'         => $this->getWidgetsUrl(),
-                'icon'        => 'icon-briefcase',
+                'icon'        => 'icon-th-large',
                 'permissions' => ['numencode.widgets.manage_*'],
                 'order'       => 399,
-                'sideMenu'    => [
-                    'promotions' => [
-                        'label'       => 'numencode.widgets::lang.promotions.name',
-                        'icon'        => 'icon-picture-o',
-                        'url'         => Backend::url('numencode/widgets/promotions'),
-                        'permissions' => ['numencode.widgets.manage_promotions'],
-                    ],
-                    'features'   => [
-                        'label'       => 'numencode.widgets::lang.features.name',
-                        'icon'        => 'icon-eye',
-                        'url'         => Backend::url('numencode/widgets/features'),
-                        'permissions' => ['numencode.widgets.manage_features'],
-                    ],
-                    'highlights' => [
-                        'label'       => 'numencode.widgets::lang.highlights.name',
-                        'icon'        => 'icon-star',
-                        'url'         => Backend::url('numencode/widgets/highlights'),
-                        'permissions' => ['numencode.widgets.manage_highlights'],
-                    ],
-                    'gallery'    => [
-                        'label'       => 'numencode.widgets::lang.gallery.name',
-                        'icon'        => 'icon-camera-retro',
-                        'url'         => Backend::url('numencode/widgets/gallery'),
-                        'permissions' => ['numencode.widgets.manage_gallery'],
-                    ],
-                ],
+                'sideMenu'    => $sideMenu,
             ],
         ];
     }
 
     public function registerPermissions(): array
     {
-        return [
-            'numencode.widgets.manage_promotions' => [
+        $permissions = [];
+
+        foreach (array_keys(self::WIDGET_TYPES) as $code) {
+            $permissions['numencode.widgets.manage_' . $code] = [
                 'tab'   => 'numencode.widgets::lang.plugin.name',
-                'label' => 'numencode.widgets::lang.permissions.promotions',
-            ],
-            'numencode.widgets.manage_features'   => [
-                'tab'   => 'numencode.widgets::lang.plugin.name',
-                'label' => 'numencode.widgets::lang.permissions.features',
-            ],
-            'numencode.widgets.manage_highlights' => [
-                'tab'   => 'numencode.widgets::lang.plugin.name',
-                'label' => 'numencode.widgets::lang.permissions.highlights',
-            ],
-            'numencode.widgets.manage_gallery' => [
-                'tab'   => 'numencode.widgets::lang.plugin.name',
-                'label' => 'numencode.widgets::lang.permissions.gallery',
-            ],
-        ];
+                'label' => 'numencode.widgets::lang.permissions.' . $code,
+            ];
+        }
+
+        return $permissions;
     }
 
-    protected function getWidgetsUrl()
+    /**
+     * URL of the main menu item: the first widget type the backend user may manage.
+     */
+    protected function getWidgetsUrl(): string
     {
         $user = BackendAuth::getUser();
 
-        if ($user->hasPermission('numencode.widgets.manage_promotions')) {
-            return Backend::url('numencode/widgets/promotions');
+        foreach (array_keys(self::WIDGET_TYPES) as $code) {
+            if (!$user || $user->hasAccess('numencode.widgets.manage_' . $code)) {
+                return Backend::url('numencode/widgets/' . $code);
+            }
         }
 
-        if ($user->hasPermission('numencode.widgets.manage_features')) {
-            return Backend::url('numencode/widgets/features');
-        }
-
-        if ($user->hasPermission('numencode.widgets.manage_highlights')) {
-            return Backend::url('numencode/widgets/highlights');
-        }
-
-        if ($user->hasPermission('numencode.widgets.manage_gallery')) {
-            return Backend::url('numencode/widgets/gallery');
-        }
-
-        return Backend::url('/');
+        return Backend::url('backend');
     }
 }

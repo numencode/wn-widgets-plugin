@@ -1,28 +1,15 @@
-<?php namespace NumenCode\Widgets\Controllers;
+<?php
 
-use BackendMenu;
-use Backend\Classes\Controller;
+declare(strict_types=1);
 
-class Gallery extends Controller
+namespace NumenCode\Widgets\Controllers;
+
+use NumenCode\Widgets\Classes\WidgetController;
+
+/**
+ * Backend pages of the gallery widget type.
+ */
+class Gallery extends WidgetController
 {
-    public $implement = [
-        'Backend.Behaviors.FormController',
-        'Backend.Behaviors.ListController',
-    ];
-
-    public $formConfig = 'config_form.yaml';
-    public $listConfig = 'config_list.yaml';
-
-    public $bodyClass = 'compact-container';
-
-    public $requiredPermissions = [
-        'numencode.widgets.manage_gallery',
-    ];
-
-    public function __construct()
-    {
-        parent::__construct();
-
-        BackendMenu::setContext('NumenCode.Widgets', 'widgets', 'gallery');
-    }
+    protected string $widgetType = 'gallery';
 }
