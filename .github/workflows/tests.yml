@@ -48,7 +48,9 @@ jobs:
                   mkdir -p plugins/numencode config/testing
                   mv ../plugin plugins/numencode/widgets
                   cp config/cms.php config/testing/cms.php
-                  composer config --json extra.merge-plugin.include '["plugins/numencode/*/composer.json"]'
+                  # Only this plugin: NumenCode.Fundamentals is installed into plugins/numencode/ as a regular
+                  # dependency and must not be merged (its winter/storm constraint breaks Winter develop's alias)
+                  composer config --json extra.merge-plugin.include '["plugins/numencode/widgets/composer.json"]'
 
             # Winter.Translate is optional for the plugin; installed so the integration tests can run.
             - name: Add Winter.Translate to the project
