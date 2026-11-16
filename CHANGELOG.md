@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2026-11-16
+
+### Fixed
+
+- The "– select –" placeholder of the component group dropdown and its "required" message showed raw
+  language keys in the Inspector (e.g. when adding a widget snippet to a static page). Winter doesn't translate
+  these property keys, so they are now passed translated.
+
 ## [2.0.0] - 2026-11-06
 
 A rewrite on NumenCode.Fundamentals 2.1 and Winter CMS 1.2.15. It contains breaking changes –
@@ -129,7 +137,8 @@ see [Upgrading from 1.x](#upgrading-from-1x).
 - Initial release of the **Widgets Plugin** with Counters, Promotions, Features and Highlights, compatible with
   Winter CMS `1.2.7`.
 
-[Unreleased]: https://github.com/numencode/wn-widgets-plugin/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/numencode/wn-widgets-plugin/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/numencode/wn-widgets-plugin/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/numencode/wn-widgets-plugin/compare/v1.2.0...v2.0.0
 [1.2.0]: https://github.com/numencode/wn-widgets-plugin/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/numencode/wn-widgets-plugin/compare/v1.0.1...v1.1.0

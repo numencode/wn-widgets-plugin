@@ -56,6 +56,18 @@ class GroupComponentsTest extends WidgetsTestCase
         $this->assertArrayNotHasKey('items_per_row', (new Features())->defineProperties());
     }
 
+    /**
+     * Winter's Inspector doesn't translate "placeholder" or validation messages, so they must be passed translated.
+     */
+    public function testGroupPlaceholderAndValidationMessageAreTranslated(): void
+    {
+        $group = (new Features())->defineProperties()['group'];
+
+        $this->assertSame(trans('numencode.widgets::lang.component.group_placeholder'), $group['placeholder']);
+        $this->assertStringNotContainsString('::', $group['placeholder']);
+        $this->assertStringNotContainsString('::', $group['validation']['required']['message']);
+    }
+
     public function testGalleryItemsPerRowIsADropdownOfGridDivisors(): void
     {
         $property = (new Gallery())->defineProperties()['items_per_row'];

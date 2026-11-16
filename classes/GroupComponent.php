@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace NumenCode\Widgets\Classes;
 
 use Cms\Classes\ComponentBase;
+use Lang;
 use NumenCode\Fundamentals\Traits\ComponentRenderer;
 use NumenCode\Widgets\Models\WidgetGroup;
 
@@ -64,10 +65,11 @@ abstract class GroupComponent extends ComponentBase
                 'title'       => 'numencode.widgets::lang.component.group',
                 'description' => 'numencode.widgets::lang.component.group_description',
                 'type'        => 'dropdown',
-                'placeholder' => 'numencode.widgets::lang.component.group_placeholder',
+                // Winter translates only title, description, options, group and validationMessage
+                'placeholder' => Lang::get('numencode.widgets::lang.component.group_placeholder'),
                 'default'     => '',
                 'validation'  => [
-                    'required' => ['message' => 'numencode.widgets::lang.component.group_required'],
+                    'required' => ['message' => Lang::get('numencode.widgets::lang.component.group_required')],
                 ],
             ],
             'layout' => [

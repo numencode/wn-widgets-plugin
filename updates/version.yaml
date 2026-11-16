@@ -28,3 +28,5 @@
     - '!!! Rewrite on NumenCode.Fundamentals 2.1: relation repeaters, Counters as a widget type, group/layout component properties, Bootstrap 5 templates, CmsPermissions support; removes soft deletes from widget groups (soft-deleted groups are deleted permanently). Requires PHP 8.2+. See the upgrade guide in CHANGELOG.md.'
     - v2_0_0_remove_soft_deletes.php
     - create_numencode_widgets_counters_tables.php
+2.0.1:
+    - 'Fix untranslated group placeholder and validation message in the component Inspector'
