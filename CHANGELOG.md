@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] - 2026-11-17
+
+### Added
+
+- Components declare where their group is edited (`GroupComponent::bricksEditUrl()`), so NumenCode.Bricks shows an
+  "Edit …" link on widget bricks that opens the selected group in a new tab. Only for backend users who may manage
+  that widget type.
+
 ## [2.0.1] - 2026-11-16
 
 ### Fixed
@@ -137,7 +145,8 @@ see [Upgrading from 1.x](#upgrading-from-1x).
 - Initial release of the **Widgets Plugin** with Counters, Promotions, Features and Highlights, compatible with
   Winter CMS `1.2.7`.
 
-[Unreleased]: https://github.com/numencode/wn-widgets-plugin/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/numencode/wn-widgets-plugin/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/numencode/wn-widgets-plugin/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/numencode/wn-widgets-plugin/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/numencode/wn-widgets-plugin/compare/v1.2.0...v2.0.0
 [1.2.0]: https://github.com/numencode/wn-widgets-plugin/compare/v1.1.0...v1.2.0

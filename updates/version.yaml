@@ -30,3 +30,5 @@
     - create_numencode_widgets_counters_tables.php
 2.0.1:
     - 'Fix untranslated group placeholder and validation message in the component Inspector'
+2.1.0:
+    - 'Edit links for NumenCode.Bricks (GroupComponent::bricksEditUrl())'

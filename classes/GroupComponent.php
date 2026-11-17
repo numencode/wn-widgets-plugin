@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace NumenCode\Widgets\Classes;
 
+use Backend\Facades\BackendAuth;
 use Cms\Classes\ComponentBase;
 use Lang;
 use NumenCode\Fundamentals\Traits\ComponentRenderer;
@@ -107,6 +108,23 @@ abstract class GroupComponent extends ComponentBase
         }
 
         return $this->renderSelectedLayout();
+    }
+
+    /**
+     * Where the selected group is edited, for NumenCode.Bricks: a component brick shows an "Edit …" link to this
+     * backend URL, with {group} replaced by the selected group. Null when the backend user may not manage this
+     * widget type (no link then).
+     */
+    public static function bricksEditUrl(): ?string
+    {
+        $code = strtolower(class_basename(static::class));
+        $user = BackendAuth::getUser();
+
+        if (!$user || !$user->hasAccess('numencode.widgets.manage_' . $code)) {
+            return null;
+        }
+
+        return 'numencode/widgets/' . $code . '/update/{group}';
     }
 
     /**

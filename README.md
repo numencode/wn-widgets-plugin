@@ -96,6 +96,10 @@ items_per_row = 3
 Nothing is rendered when no group is selected, or when the group doesn't exist or is unpublished, so templates
 don't need checks for an empty group.
 
+The components are also Winter.Pages snippets. With [NumenCode.Bricks](https://github.com/numencode/wn-bricks-plugin)
+they are offered as bricks, and each brick shows an "Edit …" link that opens the selected group's backend form in a
+new tab (`GroupComponent::bricksEditUrl()`; only for backend users who may manage that widget type).
+
 ### Template variables
 
 | Variable | Description |

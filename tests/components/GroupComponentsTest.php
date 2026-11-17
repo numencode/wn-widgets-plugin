@@ -59,6 +59,23 @@ class GroupComponentsTest extends WidgetsTestCase
     /**
      * Winter's Inspector doesn't translate "placeholder" or validation messages, so they must be passed translated.
      */
+    public function testBricksEditUrlNeedsThePermissionToManageTheWidgetType(): void
+    {
+        $this->assertNull(Features::bricksEditUrl(), 'no backend user');
+
+        $user = $this->loginBackendUser();
+        $this->assertNull(Features::bricksEditUrl(), 'without the permission');
+
+        // Core doesn't let the logged-in user change their own permissions
+        \Backend\Facades\BackendAuth::logout();
+        $user->permissions = ['numencode.widgets.manage_features' => 1];
+        $user->save();
+        \Backend\Facades\BackendAuth::setUser($user->fresh());
+
+        $this->assertSame('numencode/widgets/features/update/{group}', Features::bricksEditUrl());
+        $this->assertNull(Gallery::bricksEditUrl(), 'per widget type');
+    }
+
     public function testGroupPlaceholderAndValidationMessageAreTranslated(): void
     {
         $group = (new Features())->defineProperties()['group'];
