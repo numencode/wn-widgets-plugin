@@ -32,3 +32,5 @@
     - 'Fix untranslated group placeholder and validation message in the component Inspector'
 2.1.0:
     - 'Edit links for NumenCode.Bricks (GroupComponent::bricksEditUrl())'
+2.1.1:
+    - 'Maintenance release: same code as 2.1.0, published so Packagist refers to the tagged commit'
