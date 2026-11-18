@@ -36,3 +36,5 @@
     - 'Maintenance release: same code as 2.1.0, published so Packagist refers to the tagged commit'
 2.2.0:
     - 'Components declare their menu icon (shown on NumenCode.Bricks bricks)'
+2.3.0:
+    - 'Duplicate, publish/unpublish and copy/paste for widget items (requires NumenCode.Fundamentals 2.3)'

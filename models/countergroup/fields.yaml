@@ -19,6 +19,7 @@ tabs:
             titleFrom: title
             style: collapsed
             showToggleAll: true
+            itemActions: true
             span: full
         content:
             tab: 'numencode.fundamentals::lang.field.description'

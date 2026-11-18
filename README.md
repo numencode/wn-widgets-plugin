@@ -39,7 +39,7 @@ layout or static page, with layouts that themes can override.
 
 - PHP 8.2 or newer
 - [Winter CMS](https://wintercms.com) 1.2 (tested with 1.2.15)
-- [NumenCode.Fundamentals](https://github.com/numencode/wn-fundamentals-plugin) 2.1 or newer (installed automatically)
+- [NumenCode.Fundamentals](https://github.com/numencode/wn-fundamentals-plugin) 2.3 or newer (installed automatically)
 - Optional: [Winter.Translate](https://github.com/wintercms/wn-translate-plugin) for translations,
   [Winter.Pages](https://github.com/wintercms/wn-pages-plugin) for static page snippets
 
@@ -57,7 +57,7 @@ The backend menu **Widgets** has a page for every widget type. Each record is a 
 
 - a title, an intro text and an optional link (tab "Description"),
 - its **items**, edited inline in the "Items" tab: drag to reorder, collapse or expand them one by one or all at
-  once,
+  once, duplicate, unpublish, or copy an item and paste it into another group of the same widget type,
 - a "Published" switch in the sidebar.
 
 Each widget type has its own permission (Settings → Administrators → Permissions → Widgets):
