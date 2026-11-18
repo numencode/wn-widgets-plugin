@@ -98,7 +98,8 @@ don't need checks for an empty group.
 
 The components are also Winter.Pages snippets. With [NumenCode.Bricks](https://github.com/numencode/wn-bricks-plugin)
 they are offered as bricks, and each brick shows an "Edit …" link that opens the selected group's backend form in a
-new tab (`GroupComponent::bricksEditUrl()`; only for backend users who may manage that widget type).
+new tab (`GroupComponent::bricksEditUrl()`; only for backend users who may manage that widget type). The bricks
+use the widget types' menu icons (`icon` in `componentDetails()`).
 
 ### Template variables
 

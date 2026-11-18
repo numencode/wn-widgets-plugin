@@ -51,6 +51,7 @@ class GroupComponentsTest extends WidgetsTestCase
             $this->assertSame('@default', $properties['layout']['default'], $code);
             $this->assertSame('numencode.widgets::lang.' . $code . '.name', $details['name'], $code);
             $this->assertNotSame($details['name'], trans($details['name']), $code . ': translated');
+            $this->assertSame(\NumenCode\Widgets\Plugin::WIDGET_TYPES[$code], $details['icon'], $code . ': menu icon');
         }
 
         $this->assertArrayNotHasKey('items_per_row', (new Features())->defineProperties());

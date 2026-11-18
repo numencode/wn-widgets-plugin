@@ -9,6 +9,7 @@ use Cms\Classes\ComponentBase;
 use Lang;
 use NumenCode\Fundamentals\Traits\ComponentRenderer;
 use NumenCode\Widgets\Models\WidgetGroup;
+use NumenCode\Widgets\Plugin;
 
 /**
  * Base CMS component that displays one widget group with its published items.
@@ -51,12 +52,21 @@ abstract class GroupComponent extends ComponentBase
      */
     protected string $groupModel;
 
+    /**
+     * The icon is the widget type's backend menu icon (used by NumenCode.Bricks for the brick's icon).
+     */
     public function componentDetails(): array
     {
-        return [
+        $details = [
             'name'        => $this->lang('name'),
             'description' => $this->lang('description'),
         ];
+
+        if ($icon = Plugin::WIDGET_TYPES[strtolower(class_basename($this))] ?? null) {
+            $details['icon'] = $icon;
+        }
+
+        return $details;
     }
 
     public function defineProperties(): array
